@@ -1,8 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Keyboard } from 'swiper/modules';
+import 'swiper/css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,204 +99,200 @@ const projects = [
   }
 ];
 
-function ProjectPreview({ project, onClose, onNavigate }) {
-  const overlayRef = useRef(null);
-  const contentRef = useRef(null);
-  const imageRef = useRef(null);
-  const detailsRef = useRef(null);
-  const galleryRef = useRef(null);
+function getImages(project) {
+  const all = [project.image, ...(project.gallery || [])];
+  return all.map((src) => ({ src, alt: project.title }));
+}
+
+function ProjectPreview({ project, onClose }) {
+  const scrollRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = project ? getImages(project) : [];
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') handleClose();
-      if (e.key === 'ArrowRight') onNavigate(1);
-      if (e.key === 'ArrowLeft') onNavigate(-1);
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [project.id]);
-
-  useEffect(() => {
+    if (!project) return;
+    setActiveIndex(0);
     document.body.style.overflow = 'hidden';
     if (window.lenis) window.lenis.stop();
 
-    const tl = gsap.timeline();
-    tl.fromTo(overlayRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 0.4, ease: 'power2.out' }
-    );
-    tl.fromTo(contentRef.current,
-      { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
-      '-=0.2'
-    );
-    tl.fromTo(imageRef.current,
-      { scale: 1.1, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.6, ease: 'power2.out' },
-      '-=0.3'
-    );
-    tl.fromTo(detailsRef.current,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out' },
-      '-=0.2'
-    );
-    if (galleryRef.current) {
-      tl.fromTo(galleryRef.current.children,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: 'power2.out' },
-        '-=0.2'
-      );
+    const el = scrollRef.current;
+    const stopWheel = (e) => e.stopPropagation();
+    const stopTouch = (e) => e.stopPropagation();
+    if (el) {
+      el.addEventListener('wheel', stopWheel, { passive: false });
+      el.addEventListener('touchmove', stopTouch, { passive: false });
     }
+
+    const onKey = (e) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
 
     return () => {
       document.body.style.overflow = '';
       if (window.lenis) window.lenis.start();
+      if (el) {
+        el.removeEventListener('wheel', stopWheel);
+        el.removeEventListener('touchmove', stopTouch);
+      }
+      window.removeEventListener('keydown', onKey);
     };
-  }, [project.id]);
+  }, [project, onClose]);
 
-  const handleClose = () => {
-    const tl = gsap.timeline({
-      onComplete: onClose
-    });
-    tl.to(contentRef.current, { y: 40, opacity: 0, duration: 0.3, ease: 'power2.in' });
-    tl.to(overlayRef.current, { opacity: 0, duration: 0.3, ease: 'power2.in' }, '-=0.15');
-  };
+  if (typeof window === 'undefined') return null;
 
-  const currentIndex = projects.findIndex(p => p.id === project.id);
-
-  return (
-    <div
-      ref={overlayRef}
-      className="fixed inset-0 z-50"
-      style={{ opacity: 0 }}
-    >
-      {/* Backdrop - click to close */}
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(10, 10, 10, 0.85)', backdropFilter: 'blur(8px)' }}
-        onClick={handleClose}
-      />
-      {/* Content panel - scrollable */}
-      <div
-        ref={contentRef}
-        data-lenis-prevent
-        className="absolute inset-4 md:inset-y-8 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-[1100px] bg-[#f1f2de] rounded-sm overflow-y-auto overscroll-contain"
-        style={{ opacity: 0 }}
-      >
-        {/* Top Bar: Close + Navigation */}
-        <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-[#f1f2de]/90 backdrop-blur-sm">
-          <span className="text-xs text-[#0a0a0a]/30 font-medium tabular-nums">
-            {String(currentIndex + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
-          </span>
-          <div className="flex items-center gap-3">
-            {/* Prev */}
-            <button onClick={() => onNavigate(-1)} className="p-1">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
-                <path d="M15 6l-6 6 6 6" stroke="#0a0a0a" strokeOpacity="0.4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            {/* Next */}
-            <button onClick={() => onNavigate(1)} className="p-1">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
-                <path d="M9 6l6 6-6 6" stroke="#0a0a0a" strokeOpacity="0.4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            {/* Close */}
-            <button onClick={handleClose} className="p-1 ml-1">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
-                <path d="M6 6l12 12M18 6L6 18" stroke="#0a0a0a" strokeOpacity="0.4" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Hero Image */}
-        <div ref={imageRef} className="w-full max-h-[45vh] overflow-hidden" style={{ opacity: 0 }}>
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
+  return createPortal(
+    <AnimatePresence>
+      {project && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="fixed inset-0 z-[1100] bg-[#0a0a0a]/80 backdrop-blur-sm"
+            onClick={onClose}
           />
-        </div>
 
-        {/* Details */}
-        <div ref={detailsRef} className="p-8 md:p-12" style={{ opacity: 0 }}>
-          <div className="grid grid-cols-12 gap-6 md:gap-8">
-
-            {/* Left: Title + Overview */}
-            <div className="col-span-12 md:col-span-7">
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#20807e] mb-3 block">
-                {project.category}
-              </span>
-              <h3 className="text-3xl md:text-5xl font-black tracking-[-0.03em] leading-[0.95] mb-6">
+          {/* Modal */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            ref={scrollRef}
+            data-lenis-prevent
+            className="fixed inset-0 z-[1101] overflow-y-auto bg-[#0a0a0a]"
+          >
+            {/* Top bar */}
+            <div className="sticky top-0 z-20 flex items-center justify-between bg-[#0a0a0a]/80 backdrop-blur-md px-4 py-3 md:px-6">
+              <h2 className="text-sm font-medium text-white md:text-base">
                 {project.title}
-              </h3>
-              <p className="text-base md:text-lg text-[#0a0a0a]/60 leading-relaxed">
-                {project.overview}
-              </p>
+              </h2>
+              <div className="flex items-center gap-3">
+                {images.length > 1 && (
+                  <span className="text-xs tabular-nums text-white/30">
+                    {activeIndex + 1} / {images.length}
+                  </span>
+                )}
+                <button
+                  onClick={onClose}
+                  className="cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
             </div>
 
-            {/* Right: Meta Info */}
-            <div className="col-span-12 md:col-span-4 md:col-start-9 flex flex-row flex-wrap md:flex-col gap-6 md:gap-6 mt-2 md:mt-0">
-              <div>
-                <span className="text-xs text-[#0a0a0a]/30 uppercase tracking-[0.2em] block mb-1">Year</span>
-                <span className="text-sm font-medium text-[#0a0a0a]/70">{project.year}</span>
-              </div>
-              <div>
-                <span className="text-xs text-[#0a0a0a]/30 uppercase tracking-[0.2em] block mb-1">Industry</span>
-                <span className="text-sm font-medium text-[#0a0a0a]/70">{project.industry}</span>
-              </div>
-              <div>
-                <span className="text-xs text-[#0a0a0a]/30 uppercase tracking-[0.2em] block mb-1">Deliverables</span>
-                <div className="flex flex-wrap gap-2 mt-1.5">
-                  {project.deliverables.map((item) => (
-                    <span
-                      key={item}
-                      className="text-xs font-medium text-[#0a0a0a]/50 px-3 py-1 border border-[#0a0a0a]/10 rounded-full"
+            {/* Image Swiper */}
+            <div className="relative h-[55vh] mx-auto max-w-5xl px-6 md:px-10">
+              <Swiper
+                modules={[Keyboard]}
+                keyboard={{ enabled: true }}
+                onSwiper={setSwiperInstance}
+                onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                spaceBetween={0}
+                slidesPerView={1}
+                className="h-full w-full"
+              >
+                {images.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="flex items-center justify-center h-full w-full">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="max-w-full max-h-full object-contain rounded-sm"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              {/* Nav buttons */}
+              {images.length > 1 && (
+                <>
+                  {activeIndex > 0 && (
+                    <button
+                      onClick={() => swiperInstance?.slidePrev()}
+                      className="cursor-pointer absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20"
                     >
-                      {item}
-                    </span>
-                  ))}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
+                        <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  )}
+                  {activeIndex < images.length - 1 && (
+                    <button
+                      onClick={() => swiperInstance?.slideNext()}
+                      className="cursor-pointer absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20"
+                    >
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
+                        <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+
+            {/* Content */}
+            <div className="mx-auto max-w-4xl px-6 py-10 md:px-10 md:py-16">
+              {/* Meta row */}
+              <div className="mb-8 flex flex-wrap gap-x-10 gap-y-4 border-b border-white/10 pb-8 text-xs text-white/40">
+                <div>
+                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-white/20">Category</span>
+                  {project.category}
+                </div>
+                <div>
+                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-white/20">Industry</span>
+                  {project.industry}
+                </div>
+                <div>
+                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-white/20">Year</span>
+                  {project.year}
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Result */}
-          <div className="mt-10 pt-8 border-t border-[#0a0a0a]/10">
-            <div className="flex items-start gap-4">
-              <span className="text-xs text-[#0a0a0a]/30 uppercase tracking-[0.2em] shrink-0 mt-0.5">Result</span>
-              <p className="text-sm md:text-base font-medium text-[#0a0a0a]/70">{project.result}</p>
-            </div>
-          </div>
-        </div>
+              {/* Overview */}
+              <div className="mb-10">
+                <h3 className="mb-3 text-xs uppercase tracking-widest text-white/20">Overview</h3>
+                <p className="text-sm leading-relaxed text-white/60 md:text-base md:leading-relaxed">
+                  {project.overview}
+                </p>
+              </div>
 
-        {/* Gallery */}
-        <div ref={galleryRef} className="px-8 md:px-12 pb-10 md:pb-14 grid grid-cols-3 gap-3 md:gap-4">
-          {project.gallery.map((img, i) => (
-            <div key={i} className="aspect-[4/3] overflow-hidden rounded-sm">
-              <img
-                src={img}
-                alt={`${project.title} detail ${i + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          ))}
-        </div>
+              {/* Result */}
+              <div className="mb-10">
+                <h3 className="mb-3 text-xs uppercase tracking-widest text-white/20">Result</h3>
+                <p className="text-sm leading-relaxed text-white/60 md:text-base md:leading-relaxed">
+                  {project.result}
+                </p>
+              </div>
 
-        {/* CTA */}
-        <div className="px-8 md:px-12 pb-10 md:pb-14">
-          <a
-            href="#contact"
-            onClick={handleClose}
-            className="inline-flex items-center gap-4 text-sm font-medium uppercase tracking-[0.2em] text-[#20807e] hover:text-[#0a0a0a] transition-colors duration-300 group"
-          >
-            <span>Start a similar project</span>
-            <span className="w-8 h-px bg-current group-hover:w-14 transition-all duration-300"></span>
-          </a>
-        </div>
-      </div>
-    </div>
+              {/* Deliverables */}
+              {project.deliverables?.length > 0 && (
+                <div className="mb-10">
+                  <h3 className="mb-3 text-xs uppercase tracking-widest text-white/20">Deliverables</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.deliverables.map((item, i) => (
+                      <span
+                        key={i}
+                        className="text-xs text-white/40 px-3 py-1.5 border border-white/10 rounded-full"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>,
+    document.body
   );
 }
 
@@ -591,17 +592,10 @@ export default function SelectedWorks() {
       </div>
 
       {/* Project Preview Modal */}
-      {selectedProject && (
-        <ProjectPreview
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-          onNavigate={(direction) => {
-            const currentIdx = projects.findIndex(p => p.id === selectedProject.id);
-            const nextIdx = (currentIdx + direction + projects.length) % projects.length;
-            setSelectedProject(projects[nextIdx]);
-          }}
-        />
-      )}
+      <ProjectPreview
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }
