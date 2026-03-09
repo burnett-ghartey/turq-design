@@ -168,7 +168,7 @@ export default function Home() {
       <div className="min-h-screen bg-[#f1f2de] text-[#0a0a0a] overflow-x-hidden" ref={heroRef}>
         {/* Header */}
         <motion.header
-          className="fixed w-full top-0 z-50 bg-[#f1f2de]/90 backdrop-blur-sm border-b border-[#0a0a0a]/5"
+          className={`fixed top-0 z-50 transition-all duration-300 backdrop-blur-sm border-b border-[#0a0a0a]/5 ${mobileMenuOpen ? 'left-4 right-4 top-4 rounded-2xl bg-[#f1f2de] shadow-lg border' : 'left-0 right-0 bg-[#f1f2de]/90'}`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
