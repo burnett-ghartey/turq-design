@@ -398,7 +398,7 @@ export default function Home() {
             <div className="grid grid-cols-12 gap-4 md:gap-8">
               <div className="col-span-12 lg:col-span-10 lg:col-start-2">
                 <motion.p
-                  className="reveal-text text-xl md:text-2xl lg:text-3xl text-[#0a0a0a]/80 max-w-4xl leading-relaxed font-light"
+                  className="text-xl md:text-2xl lg:text-3xl text-[#0a0a0a]/80 max-w-4xl leading-relaxed font-light"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.3 }}
