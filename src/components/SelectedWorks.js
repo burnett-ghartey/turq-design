@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard } from 'swiper/modules';
 import 'swiper/css';
+import { HiChevronLeft, HiChevronRight, HiXMark } from 'react-icons/hi2';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -162,26 +163,24 @@ function ProjectPreview({ project, onClose }) {
             transition={{ duration: 0.4, ease: 'easeInOut' }}
             ref={scrollRef}
             data-lenis-prevent
-            className="fixed inset-0 z-[1101] overflow-y-auto bg-[#0a0a0a]"
+            className="fixed inset-0 z-[1101] overflow-y-auto bg-[#f1f2de]"
           >
             {/* Top bar */}
-            <div className="sticky top-0 z-20 flex items-center justify-between bg-[#0a0a0a]/80 backdrop-blur-md px-4 py-3 md:px-6">
-              <h2 className="text-sm font-medium text-white md:text-base">
+            <div className="sticky top-0 z-20 flex items-center justify-between bg-[#f1f2de]/90 backdrop-blur-md px-4 py-3 md:px-6 border-b border-[#0a0a0a]/5">
+              <h2 className="text-sm font-medium text-[#0a0a0a] md:text-base">
                 {project.title}
               </h2>
               <div className="flex items-center gap-3">
                 {images.length > 1 && (
-                  <span className="text-xs tabular-nums text-white/30">
+                  <span className="text-xs tabular-nums text-[#0a0a0a]/30">
                     {activeIndex + 1} / {images.length}
                   </span>
                 )}
                 <button
                   onClick={onClose}
-                  className="cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                  className="cursor-pointer rounded-full bg-[#0a0a0a]/5 p-2 text-[#0a0a0a] transition-colors hover:bg-[#0a0a0a]/10"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
-                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
+                  <HiXMark size={20} />
                 </button>
               </div>
             </div>
@@ -216,21 +215,19 @@ function ProjectPreview({ project, onClose }) {
                   {activeIndex > 0 && (
                     <button
                       onClick={() => swiperInstance?.slidePrev()}
-                      className="cursor-pointer absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20"
+                      className="cursor-pointer absolute left-8 top-1/2 z-10 -translate-y-1/2 rounded-full text-white"
+                      style={{ background: '#0a0a0a', width: 40, height: 40, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
-                        <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                      <HiChevronLeft size={22} />
                     </button>
                   )}
                   {activeIndex < images.length - 1 && (
                     <button
                       onClick={() => swiperInstance?.slideNext()}
-                      className="cursor-pointer absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20"
+                      className="cursor-pointer absolute right-8 top-1/2 z-10 -translate-y-1/2 rounded-full text-white"
+                      style={{ background: '#0a0a0a', width: 40, height: 40, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
-                        <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                      <HiChevronRight size={22} />
                     </button>
                   )}
                 </>
@@ -238,35 +235,35 @@ function ProjectPreview({ project, onClose }) {
             </div>
 
             {/* Content */}
-            <div className="mx-auto max-w-4xl px-6 py-10 md:px-10 md:py-16">
+            <div className="mx-auto max-w-4xl px-6 pt-4 pb-10 md:px-10 md:py-16">
               {/* Meta row */}
-              <div className="mb-8 flex flex-wrap gap-x-10 gap-y-4 border-b border-white/10 pb-8 text-xs text-white/40">
+              <div className="mb-8 flex flex-wrap gap-x-10 gap-y-4 border-b border-[#0a0a0a]/10 pb-8 text-xs text-[#0a0a0a]/50">
                 <div>
-                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-white/20">Category</span>
+                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-[#20807e]">Category</span>
                   {project.category}
                 </div>
                 <div>
-                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-white/20">Industry</span>
+                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-[#20807e]">Industry</span>
                   {project.industry}
                 </div>
                 <div>
-                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-white/20">Year</span>
+                  <span className="mb-1 block text-[10px] uppercase tracking-widest text-[#20807e]">Year</span>
                   {project.year}
                 </div>
               </div>
 
               {/* Overview */}
               <div className="mb-10">
-                <h3 className="mb-3 text-xs uppercase tracking-widest text-white/20">Overview</h3>
-                <p className="text-sm leading-relaxed text-white/60 md:text-base md:leading-relaxed">
+                <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Overview</h3>
+                <p className="text-sm leading-relaxed text-[#0a0a0a]/60 md:text-base md:leading-relaxed">
                   {project.overview}
                 </p>
               </div>
 
               {/* Result */}
               <div className="mb-10">
-                <h3 className="mb-3 text-xs uppercase tracking-widest text-white/20">Result</h3>
-                <p className="text-sm leading-relaxed text-white/60 md:text-base md:leading-relaxed">
+                <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Result</h3>
+                <p className="text-sm leading-relaxed text-[#0a0a0a]/60 md:text-base md:leading-relaxed">
                   {project.result}
                 </p>
               </div>
@@ -274,12 +271,12 @@ function ProjectPreview({ project, onClose }) {
               {/* Deliverables */}
               {project.deliverables?.length > 0 && (
                 <div className="mb-10">
-                  <h3 className="mb-3 text-xs uppercase tracking-widest text-white/20">Deliverables</h3>
+                  <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Deliverables</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.deliverables.map((item, i) => (
                       <span
                         key={i}
-                        className="text-xs text-white/40 px-3 py-1.5 border border-white/10 rounded-full"
+                        className="text-xs text-[#0a0a0a]/50 px-3 py-1.5 border border-[#0a0a0a]/10 rounded-full"
                       >
                         {item}
                       </span>
