@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import SelectedWorks from '../components/SelectedWorks';
 import Services from '../components/Services';
@@ -12,6 +12,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const heroRef = useRef(null);
   const marqueeRef = useRef(null);
 
@@ -214,16 +215,54 @@ export default function Home() {
                 ))}
               </nav>
 
-              {/* Mobile Menu */}
+              {/* Mobile Menu Button */}
               <motion.button
                 className="md:hidden p-3 text-[#0a0a0a]"
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
               >
                 <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 6h18M3 12h18M3 18h18"/>
+                  {mobileMenuOpen ? (
+                    <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                  ) : (
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                  )}
                 </svg>
               </motion.button>
             </div>
+
+            {/* Mobile Menu Panel */}
+            <AnimatePresence>
+              {mobileMenuOpen && (
+                <motion.nav
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="md:hidden overflow-hidden"
+                >
+                  <div className="flex flex-col gap-1 pb-6 pt-2">
+                    {[
+                      { href: '#work', label: 'Work' },
+                      { href: '#services', label: 'Services' },
+                      { href: '#process', label: 'Process' },
+                      { href: '#about', label: 'About' },
+                      { href: '#contact', label: 'Contact' }
+                    ].map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="text-lg font-medium text-[#0a0a0a] py-3 px-2 hover:text-[#20807e] transition-colors duration-200"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </motion.nav>
+              )}
+            </AnimatePresence>
           </div>
         </motion.header>
 
