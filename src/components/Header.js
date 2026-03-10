@@ -31,7 +31,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="relative w-32 h-10 lg:w-40 lg:h-12">
+          <Link href="/" className="relative w-40 h-14 lg:w-40 lg:h-12">
             <Image
               src="/Logo_default_dark.png"
               alt="Turq Design Studios"

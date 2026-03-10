@@ -174,7 +174,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
-            <div className="flex items-center justify-between py-6">
+            <div className="flex items-center justify-between py-2 md:py-3">
 
               {/* Logo */}
               <motion.a
@@ -186,7 +186,7 @@ export default function Home() {
                 <img
                   src="/Logo_default_light.png"
                   alt="Turq Design"
-                  className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                  className="w-[120px] h-[120px] md:w-[100px] md:h-[100px] object-contain"
                 />
               </motion.a>
 
@@ -222,7 +222,7 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2">
                   {mobileMenuOpen ? (
                     <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
                   ) : (
@@ -650,8 +650,8 @@ export default function Home() {
                 >
                   <motion.a
                     href="mailto:hello@turqdesign.com"
-                    className="magnetic-btn inline-flex items-center justify-center gap-4 bg-[#0a0a0a] text-white rounded-full font-[500] text-[14px] md:text-[14px] capitalize tracking-wider md:tracking-widest w-full md:w-auto px-10 md:px-14 py-5 md:py-6 group"
-                    whileHover={{ scale: 1.05, backgroundColor: '#20807e' }}
+                    className="magnetic-btn inline-flex items-center justify-center gap-4 bg-[#20807e] text-white rounded-full font-[500] text-[14px] md:text-[14px] capitalize tracking-wider md:tracking-widest w-full md:w-auto px-10 md:px-14 py-5 md:py-6 group"
+                    whileHover={{ scale: 1.05, backgroundColor: '#1a6b69' }}
                     whileTap={{ scale: 0.98 }}
                   >
                     Start a Project
@@ -678,7 +678,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 md:py-16 lg:py-20 bg-[#0a0a0a] text-white">
+        <footer className="py-12 md:py-16 lg:py-20 bg-[#20807e] text-white">
           <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="grid grid-cols-12 gap-8 md:gap-12 items-end">
 
