@@ -167,7 +167,7 @@ function ProjectPreview({ project, onClose }) {
           >
             {/* Top bar */}
             <div className="sticky top-0 z-20 flex items-center justify-between bg-[#f1f2de]/90 backdrop-blur-md px-4 py-3 md:px-6 border-b border-[#0a0a0a]/5">
-              <h2 className="text-sm font-medium text-[#0a0a0a] md:text-base">
+              <h2 className="text-[14px] font-medium text-[#0a0a0a] md:text-[16px]">
                 {project.title}
               </h2>
               <div className="flex items-center gap-3">
@@ -255,7 +255,7 @@ function ProjectPreview({ project, onClose }) {
               {/* Overview */}
               <div className="mb-10">
                 <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Overview</h3>
-                <p className="text-sm leading-relaxed text-[#0a0a0a]/60 md:text-base md:leading-relaxed">
+                <p className="text-[14px] leading-relaxed text-[#0a0a0a]/60 md:text-[16px] md:leading-relaxed">
                   {project.overview}
                 </p>
               </div>
@@ -263,7 +263,7 @@ function ProjectPreview({ project, onClose }) {
               {/* Result */}
               <div className="mb-10">
                 <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Result</h3>
-                <p className="text-sm leading-relaxed text-[#0a0a0a]/60 md:text-base md:leading-relaxed">
+                <p className="text-[14px] leading-relaxed text-[#0a0a0a]/60 md:text-[16px] md:leading-relaxed">
                   {project.result}
                 </p>
               </div>
@@ -389,7 +389,7 @@ function ProjectItem({ project, index, onSelect }) {
 
           {/* Index Number */}
           <div className="col-span-2 md:col-span-1">
-            <span className="text-xs md:text-sm font-medium text-[#0a0a0a]/30 tabular-nums">
+            <span className="text-xs md:text-[14px] font-medium text-[#0a0a0a]/30 tabular-nums">
               {String(index + 1).padStart(2, '0')}
             </span>
           </div>
@@ -398,7 +398,7 @@ function ProjectItem({ project, index, onSelect }) {
           <div className="col-span-10 md:col-span-5">
             <h3
               ref={titleRef}
-              className="text-2xl md:text-4xl lg:text-5xl font-black tracking-[-0.03em] leading-none"
+              className="text-[22px] md:text-[31px] font-medium leading-none"
             >
               <span className="relative inline-block">
                 {project.title}
@@ -415,7 +415,7 @@ function ProjectItem({ project, index, onSelect }) {
           <div className="hidden md:block col-span-3">
             <span
               ref={categoryRef}
-              className="text-sm text-[#0a0a0a]/50 font-medium"
+              className="text-[14px] text-[#0a0a0a]/50 font-medium"
               style={{ opacity: 0.5 }}
             >
               {project.category}
@@ -424,7 +424,7 @@ function ProjectItem({ project, index, onSelect }) {
 
           {/* Year */}
           <div className="hidden md:block col-span-2">
-            <span className="text-sm text-[#0a0a0a]/30 font-medium tabular-nums">
+            <span className="text-[14px] text-[#0a0a0a]/30 font-medium tabular-nums">
               {project.year}
             </span>
           </div>
@@ -543,10 +543,10 @@ export default function SelectedWorks() {
             ref={headerLeftRef}
             className="col-span-12 md:col-span-6 opacity-0"
           >
-            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
+            <span className="text-xs font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
               Selected Work
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.9]">
+            <h2 className="text-[25px] md:text-[39px] font-medium leading-[1.15]">
               Featured<br />
               <span className="text-[#0a0a0a]/20">Projects</span>
             </h2>
@@ -556,7 +556,7 @@ export default function SelectedWorks() {
             ref={headerRightRef}
             className="col-span-12 md:col-span-4 md:col-start-9 flex items-end opacity-0"
           >
-            <p className="text-sm text-[#0a0a0a]/50 leading-relaxed">
+            <p className="text-[14px] text-[#0a0a0a]/50 leading-relaxed">
               Selected projects showcasing our approach to branding, digital design, and visual storytelling.
             </p>
           </div>
@@ -579,7 +579,7 @@ export default function SelectedWorks() {
             href="#"
             className="group inline-flex items-center gap-6"
           >
-            <span className="text-sm font-medium text-[#0a0a0a]/40 uppercase tracking-[0.2em] group-hover:text-[#0a0a0a] transition-colors duration-300">
+            <span className="text-[14px] font-medium text-[#0a0a0a]/40 uppercase tracking-[0.15em] group-hover:text-[#0a0a0a] transition-colors duration-300">
               View all projects
             </span>
             <span className="w-12 h-px bg-[#0a0a0a]/20 group-hover:w-20 group-hover:bg-[#20807e] transition-all duration-300"></span>

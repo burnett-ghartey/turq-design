@@ -47,7 +47,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm lg:text-base font-medium text-foreground hover:text-turq-teal transition-colors duration-300 relative group"
+                className="text-xs font-normal tracking-[0.15em] uppercase text-foreground hover:text-turq-teal transition-colors duration-300 relative group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-turq-teal transition-all duration-300 group-hover:w-full"></span>
@@ -57,7 +57,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <button 
-            className="hidden md:block bg-turq-teal text-turq-cream px-8 py-3.5 rounded-full font-medium text-sm lg:text-base hover:bg-turq-dark transition-all duration-300 hover:scale-105 shadow-md"
+            className="hidden md:block bg-turq-teal text-turq-cream px-8 py-3.5 rounded-full font-medium text-[14px] tracking-wider capitalize hover:bg-turq-dark transition-all duration-300 hover:scale-105 shadow-md"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Let's Talk
@@ -86,14 +86,14 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-base font-medium text-foreground hover:text-turq-teal transition-colors duration-300 py-2"
+                className="text-2xl font-normal tracking-[0.1em] uppercase text-foreground hover:text-turq-teal transition-colors duration-300 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
             <button 
-              className="bg-turq-teal text-turq-cream px-8 py-4 rounded-full font-medium text-sm hover:bg-turq-dark transition-all duration-300 mt-2 w-full shadow-md"
+              className="bg-turq-teal text-turq-cream px-8 py-4 rounded-full font-medium text-[14px] tracking-wider capitalize hover:bg-turq-dark transition-all duration-300 mt-2 w-full shadow-md"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

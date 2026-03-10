@@ -153,7 +153,7 @@ function ServiceItem({ service, index }) {
           <div className="col-span-2 md:col-span-1">
             <span
               ref={numberRef}
-              className="text-4xl md:text-6xl lg:text-7xl font-black tabular-nums"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold tabular-nums"
               style={{ color: 'rgba(10, 10, 10, 0.2)' }}
             >
               {service.id}
@@ -164,7 +164,7 @@ function ServiceItem({ service, index }) {
           <div className="col-span-10 md:col-span-10 lg:col-span-5">
             <h3
               ref={titleRef}
-              className="text-2xl md:text-4xl lg:text-5xl font-black tracking-[-0.03em] leading-none mb-4 relative inline-block"
+              className="text-[22px] md:text-[31px] font-medium leading-none mb-4 relative inline-block"
             >
               {service.title}
               <span
@@ -177,7 +177,7 @@ function ServiceItem({ service, index }) {
             {/* Description - Hidden by default, revealed on hover */}
             <p
               ref={descRef}
-              className="text-sm md:text-base text-[#0a0a0a]/60 leading-relaxed max-w-md mt-4"
+              className="text-[14px] md:text-[16px] text-[#0a0a0a]/60 leading-relaxed max-w-md mt-4"
               style={{ opacity: 0, transform: 'translateY(10px)' }}
             >
               {service.description}
@@ -283,10 +283,10 @@ export default function Services() {
         <div className="grid grid-cols-12 gap-4 md:gap-8 mb-16 md:mb-24">
           <div className="col-span-12 md:col-span-7">
             <div ref={headerRef} className="opacity-0">
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
+              <span className="text-xs font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
                 Services
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.9]">
+              <h2 className="text-[25px] md:text-[39px] font-medium leading-[1.15]">
                 What we<br />
                 <span className="text-[#0a0a0a]/20">do best</span>
               </h2>
@@ -296,7 +296,7 @@ export default function Services() {
           <div className="col-span-12 md:col-span-4 md:col-start-9 flex items-end">
             <p
               ref={subtitleRef}
-              className="text-sm md:text-base text-[#0a0a0a]/50 leading-relaxed opacity-0"
+              className="text-[14px] md:text-[16px] text-[#0a0a0a]/50 leading-relaxed opacity-0"
             >
               We partner with ambitious brands to create meaningful experiences through strategy, design, and creative excellence.
             </p>

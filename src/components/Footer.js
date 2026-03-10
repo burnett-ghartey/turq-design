@@ -32,7 +32,7 @@ export default function Footer() {
                 className="object-contain"
               />
             </Link>
-            <p className="text-turq-cream/80 text-sm leading-relaxed max-w-md mb-6">
+            <p className="text-turq-cream/80 text-[14px] leading-relaxed max-w-md mb-6">
               Creating exceptional digital experiences through innovative design and strategic thinking. 
               We transform ideas into captivating visual stories.
             </p>
@@ -56,13 +56,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-medium text-base mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-turq-cream/80 hover:text-turq-yellow transition-colors duration-300 text-sm"
+                    className="text-turq-cream/80 hover:text-turq-yellow transition-colors duration-300 text-[14px]"
                   >
                     {link.name}
                   </a>
@@ -73,8 +73,8 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Get in Touch</h3>
-            <ul className="space-y-3 text-sm text-turq-cream/80">
+            <h3 className="font-medium text-base mb-4">Get in Touch</h3>
+            <ul className="space-y-3 text-[14px] text-turq-cream/80">
               <li>
                 <a href="mailto:hello@turqdesign.com" className="hover:text-turq-yellow transition-colors duration-300">
                   hello@turqdesign.com
@@ -95,10 +95,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-turq-cream/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-turq-cream/60">
+          <p className="text-xs text-turq-cream/60 tracking-wide">
             © {currentYear} Turq Design Studios. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-turq-cream/60">
+          <div className="flex gap-6 text-xs text-turq-cream/60 tracking-wide">
             <a href="#" className="hover:text-turq-yellow transition-colors duration-300">
               Privacy Policy
             </a>
