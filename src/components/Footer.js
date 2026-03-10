@@ -46,7 +46,7 @@ export default function Footer() {
                   className="w-10 h-10 rounded-full border border-turq-cream/30 flex items-center justify-center hover:bg-turq-cream/10 hover:border-turq-cream transition-all duration-300"
                   aria-label={link.name}
                 >
-                  <span className="text-xs font-medium">
+                  <span className="text-[12px] font-medium">
                     {link.name.substring(0, 2).toUpperCase()}
                   </span>
                 </a>
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-medium text-base mb-4">Quick Links</h3>
+            <h3 className="font-medium text-[16px] mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-medium text-base mb-4">Get in Touch</h3>
+            <h3 className="font-medium text-[16px] mb-4">Get in Touch</h3>
             <ul className="space-y-3 text-[14px] text-turq-cream/80">
               <li>
                 <a href="mailto:hello@turqdesign.com" className="hover:text-turq-yellow transition-colors duration-300">
@@ -95,10 +95,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-turq-cream/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-turq-cream/60 tracking-wide">
+          <p className="text-[12px] text-turq-cream/60 tracking-wide">
             © {currentYear} Turq Design Studios. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-turq-cream/60 tracking-wide">
+          <div className="flex gap-6 text-[12px] text-turq-cream/60 tracking-wide">
             <a href="#" className="hover:text-turq-yellow transition-colors duration-300">
               Privacy Policy
             </a>

@@ -153,7 +153,7 @@ function ServiceItem({ service, index }) {
           <div className="col-span-2 md:col-span-1">
             <span
               ref={numberRef}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold tabular-nums"
+              className="text-[36px] md:text-[60px] lg:text-[96px] font-bold tabular-nums"
               style={{ color: 'rgba(10, 10, 10, 0.2)' }}
             >
               {service.id}
@@ -194,7 +194,7 @@ function ServiceItem({ service, index }) {
               {service.capabilities.map((cap, i) => (
                 <span
                   key={i}
-                  className="text-xs font-medium text-[#0a0a0a]/50 px-3 py-1.5 border border-[#0a0a0a]/10 rounded-full"
+                  className="text-[12px] font-medium text-[#0a0a0a]/50 px-3 py-1.5 border border-[#0a0a0a]/10 rounded-full"
                 >
                   {cap}
                 </span>
@@ -283,7 +283,7 @@ export default function Services() {
         <div className="grid grid-cols-12 gap-4 md:gap-8 mb-16 md:mb-24">
           <div className="col-span-12 md:col-span-7">
             <div ref={headerRef} className="opacity-0">
-              <span className="text-xs font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
+              <span className="text-[12px] font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
                 Services
               </span>
               <h2 className="text-[25px] md:text-[39px] font-medium leading-[1.15]">

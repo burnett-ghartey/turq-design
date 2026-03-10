@@ -47,7 +47,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-xs font-normal tracking-[0.15em] uppercase text-foreground hover:text-turq-teal transition-colors duration-300 relative group"
+                className="text-[12px] font-normal tracking-[0.15em] uppercase text-foreground hover:text-turq-teal transition-colors duration-300 relative group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-turq-teal transition-all duration-300 group-hover:w-full"></span>
@@ -86,7 +86,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-2xl font-normal tracking-[0.1em] uppercase text-foreground hover:text-turq-teal transition-colors duration-300 py-2"
+                className="text-[32px] font-normal tracking-[0.1em] uppercase text-foreground hover:text-turq-teal transition-colors duration-300 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}

@@ -172,7 +172,7 @@ function ProjectPreview({ project, onClose }) {
               </h2>
               <div className="flex items-center gap-3">
                 {images.length > 1 && (
-                  <span className="text-xs tabular-nums text-[#0a0a0a]/30">
+                  <span className="text-[12px] tabular-nums text-[#0a0a0a]/30">
                     {activeIndex + 1} / {images.length}
                   </span>
                 )}
@@ -237,7 +237,7 @@ function ProjectPreview({ project, onClose }) {
             {/* Content */}
             <div className="mx-auto max-w-4xl px-6 pt-4 pb-10 md:px-10 md:py-16">
               {/* Meta row */}
-              <div className="mb-8 flex flex-wrap gap-x-10 gap-y-4 border-b border-[#0a0a0a]/10 pb-8 text-xs text-[#0a0a0a]/50">
+              <div className="mb-8 flex flex-wrap gap-x-10 gap-y-4 border-b border-[#0a0a0a]/10 pb-8 text-[12px] text-[#0a0a0a]/50">
                 <div>
                   <span className="mb-1 block text-[10px] uppercase tracking-widest text-[#20807e]">Category</span>
                   {project.category}
@@ -254,7 +254,7 @@ function ProjectPreview({ project, onClose }) {
 
               {/* Overview */}
               <div className="mb-10">
-                <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Overview</h3>
+                <h3 className="mb-3 text-[12px] uppercase tracking-widest text-[#20807e]">Overview</h3>
                 <p className="text-[14px] leading-relaxed text-[#0a0a0a]/60 md:text-[16px] md:leading-relaxed">
                   {project.overview}
                 </p>
@@ -262,7 +262,7 @@ function ProjectPreview({ project, onClose }) {
 
               {/* Result */}
               <div className="mb-10">
-                <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Result</h3>
+                <h3 className="mb-3 text-[12px] uppercase tracking-widest text-[#20807e]">Result</h3>
                 <p className="text-[14px] leading-relaxed text-[#0a0a0a]/60 md:text-[16px] md:leading-relaxed">
                   {project.result}
                 </p>
@@ -271,12 +271,12 @@ function ProjectPreview({ project, onClose }) {
               {/* Deliverables */}
               {project.deliverables?.length > 0 && (
                 <div className="mb-10">
-                  <h3 className="mb-3 text-xs uppercase tracking-widest text-[#20807e]">Deliverables</h3>
+                  <h3 className="mb-3 text-[12px] uppercase tracking-widest text-[#20807e]">Deliverables</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.deliverables.map((item, i) => (
                       <span
                         key={i}
-                        className="text-xs text-[#0a0a0a]/50 px-3 py-1.5 border border-[#0a0a0a]/10 rounded-full"
+                        className="text-[12px] text-[#0a0a0a]/50 px-3 py-1.5 border border-[#0a0a0a]/10 rounded-full"
                       >
                         {item}
                       </span>
@@ -389,7 +389,7 @@ function ProjectItem({ project, index, onSelect }) {
 
           {/* Index Number */}
           <div className="col-span-2 md:col-span-1">
-            <span className="text-xs md:text-[14px] font-medium text-[#0a0a0a]/30 tabular-nums">
+            <span className="text-[12px] md:text-[14px] font-medium text-[#0a0a0a]/30 tabular-nums">
               {String(index + 1).padStart(2, '0')}
             </span>
           </div>
@@ -543,7 +543,7 @@ export default function SelectedWorks() {
             ref={headerLeftRef}
             className="col-span-12 md:col-span-6 opacity-0"
           >
-            <span className="text-xs font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
+            <span className="text-[12px] font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
               Selected Work
             </span>
             <h2 className="text-[25px] md:text-[39px] font-medium leading-[1.15]">

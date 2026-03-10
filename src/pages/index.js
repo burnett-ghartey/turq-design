@@ -202,7 +202,7 @@ export default function Home() {
                   <motion.a
                     key={item.href}
                     href={item.href}
-                    className="relative py-3 px-2 text-xs font-normal tracking-[0.15em] uppercase text-[#0a0a0a] group"
+                    className="relative py-3 px-2 text-[12px] font-normal tracking-[0.15em] uppercase text-[#0a0a0a] group"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
@@ -253,7 +253,7 @@ export default function Home() {
                       <a
                         key={item.href}
                         href={item.href}
-                        className="text-2xl font-normal tracking-[0.1em] uppercase text-[#0a0a0a] py-3 px-2 hover:text-[#20807e] transition-colors duration-200"
+                        className="text-[32px] font-normal tracking-[0.1em] uppercase text-[#0a0a0a] py-3 px-2 hover:text-[#20807e] transition-colors duration-200"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -285,7 +285,7 @@ export default function Home() {
                   transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div className="lg:-rotate-90 lg:origin-center lg:whitespace-nowrap">
-                    <span className="text-xs font-normal tracking-[0.3em] uppercase text-[#20807e]">
+                    <span className="text-[12px] font-normal tracking-[0.3em] uppercase text-[#20807e]">
                       Creative Studio — 2024
                     </span>
                   </div>
@@ -296,7 +296,7 @@ export default function Home() {
                   <div className="space-y-2 md:space-y-4">
                     <div className="overflow-hidden">
                       <motion.h1
-                        className="text-[1.3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
+                        className="text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
                         initial={{ y: 200, skewY: 7 }}
                         animate={{ y: 0, skewY: 0 }}
                         transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -307,7 +307,7 @@ export default function Home() {
 
                     <div className="overflow-hidden">
                       <motion.h1
-                        className="text-[1.3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
+                        className="text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
                         initial={{ y: 200, skewY: 7 }}
                         animate={{ y: 0, skewY: 0 }}
                         transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -318,7 +318,7 @@ export default function Home() {
 
                     <div className="overflow-hidden flex items-baseline gap-4">
                       <motion.h1
-                        className="text-[1.3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
+                        className="text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
                         initial={{ y: 200, skewY: 7 }}
                         animate={{ y: 0, skewY: 0 }}
                         transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -326,7 +326,7 @@ export default function Home() {
                         remember<span className="text-[#f9d412]">.</span>
                       </motion.h1>
                       <motion.span
-                        className="text-base md:text-2xl font-medium text-[#20807e] hidden md:inline"
+                        className="text-[16px] md:text-[32px] font-medium text-[#20807e] hidden md:inline"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 1.2 }}
@@ -418,13 +418,13 @@ export default function Home() {
           <div className="marquee-track flex whitespace-nowrap">
             {[...Array(4)].map((_, i) => (
               <div key={i} className="flex items-center gap-8 px-8">
-                <span className="text-4xl md:text-6xl font-semibold text-white/10 uppercase tracking-tight">Branding</span>
+                <span className="text-[36px] md:text-[60px] font-semibold text-white/10 uppercase tracking-tight">Branding</span>
                 <span className="text-[#f9d412]">✦</span>
-                <span className="text-4xl md:text-6xl font-semibold text-white/10 uppercase tracking-tight">Digital</span>
+                <span className="text-[36px] md:text-[60px] font-semibold text-white/10 uppercase tracking-tight">Digital</span>
                 <span className="text-[#20807e]">✦</span>
-                <span className="text-4xl md:text-6xl font-semibold text-white/10 uppercase tracking-tight">Strategy</span>
+                <span className="text-[36px] md:text-[60px] font-semibold text-white/10 uppercase tracking-tight">Strategy</span>
                 <span className="text-[#f9d412]">✦</span>
-                <span className="text-4xl md:text-6xl font-semibold text-white/10 uppercase tracking-tight">Identity</span>
+                <span className="text-[36px] md:text-[60px] font-semibold text-white/10 uppercase tracking-tight">Identity</span>
                 <span className="text-[#20807e]">✦</span>
               </div>
             ))}
@@ -437,7 +437,7 @@ export default function Home() {
             <div className="grid grid-cols-12 gap-4 md:gap-8">
               <div className="col-span-12 lg:col-span-10 lg:col-start-2">
                 <motion.p
-                  className="text-xl md:text-2xl lg:text-3xl text-[#0a0a0a]/80 max-w-4xl leading-snug font-light tracking-[-0.01em]"
+                  className="text-[24px] md:text-[32px] lg:text-[40px] text-[#0a0a0a]/80 max-w-4xl leading-snug font-light tracking-[-0.01em]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.3 }}
@@ -469,7 +469,7 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <span className="text-xs font-normal tracking-[0.3em] uppercase text-[#20807e] mb-4 block">
+                <span className="text-[12px] font-normal tracking-[0.3em] uppercase text-[#20807e] mb-4 block">
                   Our Approach
                 </span>
                 <h2 className="text-[25px] md:text-[39px] font-medium leading-[1.15]">
@@ -490,11 +490,11 @@ export default function Home() {
                   viewport={{ once: true, margin: "-50px" }}
                 >
                   <div className="mb-6">
-                    <span className="text-6xl md:text-7xl font-bold text-[#0a0a0a]/5">
+                    <span className="text-[60px] md:text-[96px] font-bold text-[#0a0a0a]/5">
                       {step.num}
                     </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-light mb-4 text-[#20807e]">
+                  <h3 className="text-[20px] md:text-[24px] font-light mb-4 text-[#20807e]">
                     {step.title}
                   </h3>
                   <p className="text-[14px] md:text-[16px] text-[#0a0a0a]/60 leading-relaxed">
@@ -520,7 +520,7 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <span className="text-xs font-normal tracking-[0.3em] uppercase text-[#20807e] mb-4 block">
+                <span className="text-[12px] font-normal tracking-[0.3em] uppercase text-[#20807e] mb-4 block">
                   Why Choose Us
                 </span>
                 <h2 className="text-[25px] md:text-[39px] font-medium leading-[1.15] mb-6">
@@ -550,7 +550,7 @@ export default function Home() {
                       viewport={{ once: true }}
                     >
                       <span className="w-3 h-3 bg-[#20807e] rounded-full flex-shrink-0"></span>
-                      <span className="text-[16px] md:text-[18px] font-medium">{item}</span>
+                      <span className="text-[18px] md:text-[20px] font-medium">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -570,16 +570,16 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="text-xs uppercase tracking-[0.3em] text-[#f9d412] font-normal mb-4">
+                <div className="text-[12px] uppercase tracking-[0.3em] text-[#f9d412] font-normal mb-4">
                   About Us
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-bold leading-[1.1] mb-6">
+                <h2 className="text-[36px] md:text-[48px] lg:text-[60px] font-bold leading-[1.1] mb-6">
                   Turq Design
                 </h2>
-                <p className="text-[14px] md:text-[16px] text-white/90 leading-relaxed mb-6">
+                <p className="text-[18px] text-white/90 leading-relaxed mb-6">
                   Turq Design is a multidisciplinary creative studio specializing in branding, visual identity, and digital design.
                 </p>
-                <p className="text-[14px] md:text-[16px] text-white/70 leading-relaxed">
+                <p className="text-[18px] text-white/70 leading-relaxed">
                   We believe great design is more than aesthetics — it's about clarity, consistency, and connection. Our approach blends strategy, creativity, and execution to create brand systems that work across every touchpoint.
                 </p>
               </motion.div>
@@ -590,7 +590,7 @@ export default function Home() {
                 transition={{ duration: 1, delay: 0.3 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <p className="text-xl md:text-2xl leading-relaxed text-white font-light mb-6">
+                <p className="text-[24px] md:text-[32px] leading-relaxed text-white font-light mb-6">
                   From early-stage startups to established brands, we partner closely with our clients to translate ideas into
                   <span className="font-bold text-[#f9d412]"> compelling visual stories</span> that resonate and endure.
                 </p>
@@ -600,7 +600,7 @@ export default function Home() {
                   <svg className="w-8 h-8 text-[#f9d412] mb-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                   </svg>
-                  <p className="text-[14px] md:text-[16px] text-white/90 italic leading-relaxed mb-4">
+                  <p className="text-[16px] text-white/90 italic leading-relaxed mb-4">
                     "Turq Design delivered a brand identity that perfectly captured our vision. The process was smooth, collaborative, and highly professional."
                   </p>
                   <p className="text-[14px] text-white/50">— Happy Client</p>
@@ -615,38 +615,20 @@ export default function Home() {
           <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="grid grid-cols-12 gap-4 md:gap-8">
               <div className="col-span-12 text-center">
-                <div className="overflow-hidden mb-4">
-                  <motion.h2
-                    className="scale-reveal text-[1.3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                    viewport={{ once: true }}
-                  >
+                <div className="mb-4">
+                  <h2 className="reveal-text text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]">
                     Let's build
-                  </motion.h2>
+                  </h2>
                 </div>
-                <div className="overflow-hidden mb-4">
-                  <motion.h2
-                    className="scale-reveal text-[1.3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1.2, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                    viewport={{ once: true }}
-                  >
+                <div className="mb-4">
+                  <h2 className="reveal-text text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]">
                     something
-                  </motion.h2>
+                  </h2>
                 </div>
-                <div className="overflow-hidden mb-12">
-                  <motion.h2
-                    className="scale-reveal text-[1.3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    viewport={{ once: true }}
-                  >
+                <div className="mb-12">
+                  <h2 className="reveal-text text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]">
                     <span className="italic font-bold text-[#20807e]">meaningful</span>
-                  </motion.h2>
+                  </h2>
                 </div>
 
                 <motion.p
@@ -660,7 +642,7 @@ export default function Home() {
                 </motion.p>
 
                 <motion.div
-                  className="flex flex-wrap justify-center gap-4"
+                  className="flex flex-col md:flex-row flex-wrap justify-center gap-4 mt-4"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -668,7 +650,7 @@ export default function Home() {
                 >
                   <motion.a
                     href="mailto:hello@turqdesign.com"
-                    className="magnetic-btn inline-flex items-center gap-4 bg-[#0a0a0a] text-white rounded-full font-[500] text-[14px] md:text-[14px] capitalize tracking-wider md:tracking-widest px-10 md:px-14 py-5 md:py-6 group"
+                    className="magnetic-btn inline-flex items-center justify-center gap-4 bg-[#0a0a0a] text-white rounded-full font-[500] text-[14px] md:text-[14px] capitalize tracking-wider md:tracking-widest w-full md:w-auto px-10 md:px-14 py-5 md:py-6 group"
                     whileHover={{ scale: 1.05, backgroundColor: '#20807e' }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -683,7 +665,7 @@ export default function Home() {
                   </motion.a>
                   <motion.a
                     href="mailto:hello@turqdesign.com"
-                    className="inline-flex items-center gap-4 border-2 border-[#0a0a0a] text-[#0a0a0a] rounded-full font-[500] text-[14px] md:text-[14px] capitalize tracking-wider md:tracking-widest px-10 md:px-14 py-5 md:py-6 hover:bg-[#0a0a0a] hover:text-white transition-colors duration-300"
+                    className="inline-flex items-center justify-center gap-4 border-2 border-[#0a0a0a] text-[#0a0a0a] rounded-full font-[500] text-[14px] md:text-[14px] capitalize tracking-wider md:tracking-widest w-full md:w-auto px-10 md:px-14 py-5 md:py-6 hover:bg-[#0a0a0a] hover:text-white transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -704,7 +686,7 @@ export default function Home() {
               <div className="col-span-12 md:col-span-4">
                 <div className="flex items-center gap-3 mb-4">
                   <img src="/Logo_default_dark.png" alt="Turq Design Logo" className="w-10 h-10 object-contain brightness-0 invert" />
-                  <div className="text-xl font-semibold tracking-tight">TURQ DESIGN</div>
+                  <div className="text-[20px] font-semibold tracking-tight">TURQ DESIGN</div>
                 </div>
                 <p className="text-[14px] text-white/40 max-w-xs">
                   Design with purpose. Built to last.
@@ -718,7 +700,7 @@ export default function Home() {
                     <motion.a
                       key={social}
                       href="#"
-                      className="text-xs text-white/60 font-normal uppercase tracking-wide hover:text-[#f9d412] transition-colors duration-300"
+                      className="text-[12px] text-white/60 font-normal uppercase tracking-wide hover:text-[#f9d412] transition-colors duration-300"
                       whileHover={{ y: -2 }}
                     >
                       {social}
@@ -729,7 +711,7 @@ export default function Home() {
 
               {/* Copyright */}
               <div className="col-span-12 md:col-span-4 md:text-right">
-                <p className="text-xs text-white/30 uppercase tracking-wide">
+                <p className="text-[12px] text-white/30 uppercase tracking-wide">
                   © 2024 Turq Design. All rights reserved.
                 </p>
               </div>
