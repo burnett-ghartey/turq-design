@@ -293,7 +293,7 @@ export default function Home() {
                 {/* Center - Main Headlines */}
                 <div className="col-span-12 lg:col-span-8">
                   <div className="space-y-2 md:space-y-4">
-                    <div className="overflow-hidden">
+                    <div className="overflow-hidden pb-1">
                       <motion.h1
                         className="text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]"
                         initial={{ y: 200, skewY: 7 }}
@@ -380,18 +380,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Scroll Progress Line */}
-          <motion.div
-            className="absolute left-8 md:left-12 lg:left-16 xl:left-20 top-1/2 -translate-y-1/2 w-px h-32 bg-[#0a0a0a]/10"
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-          >
-            <motion.div
-              className="w-full bg-[#20807e] origin-top"
-              style={{ height: '100%', scaleY: scrollYProgress }}
-            />
-          </motion.div>
         </section>
 
         {/* Marquee Section */}
