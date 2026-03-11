@@ -42,8 +42,17 @@ function ServiceItem({ service, index }) {
   const capsRef = useRef(null);
   const arrowRef = useRef(null);
 
+  const isDesktop = typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches;
+
   useEffect(() => {
     const item = itemRef.current;
+
+    // On desktop, hide description/caps/arrow by default (revealed on hover)
+    if (isDesktop) {
+      gsap.set(descRef.current, { opacity: 0, y: 10 });
+      gsap.set(capsRef.current, { opacity: 0, y: 10 });
+      gsap.set(arrowRef.current, { scale: 0.5, opacity: 0, rotation: -45 });
+    }
 
     gsap.fromTo(item,
       { opacity: 0, y: 60 },
@@ -71,6 +80,7 @@ function ServiceItem({ service, index }) {
   }, [index]);
 
   const handleMouseEnter = () => {
+    if (!isDesktop) return;
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     tl.to(numberRef.current, {
@@ -105,6 +115,7 @@ function ServiceItem({ service, index }) {
   };
 
   const handleMouseLeave = () => {
+    if (!isDesktop) return;
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     tl.to(numberRef.current, {
@@ -174,11 +185,10 @@ function ServiceItem({ service, index }) {
               />
             </h3>
 
-            {/* Description - Hidden by default, revealed on hover */}
+            {/* Description - Always visible on mobile, revealed on hover on desktop */}
             <p
               ref={descRef}
               className="text-[14px] md:text-[16px] text-[#0a0a0a]/60 leading-relaxed max-w-md mt-4"
-              style={{ opacity: 0, transform: 'translateY(10px)' }}
             >
               {service.description}
             </p>
@@ -189,7 +199,6 @@ function ServiceItem({ service, index }) {
             <div
               ref={capsRef}
               className="flex flex-wrap gap-2"
-              style={{ opacity: 0, transform: 'translateY(10px)' }}
             >
               {service.capabilities.map((cap, i) => (
                 <span
@@ -207,7 +216,6 @@ function ServiceItem({ service, index }) {
             <div
               ref={arrowRef}
               className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-[#20807e] flex items-center justify-center"
-              style={{ transform: 'scale(0.5) rotate(-45deg)', opacity: 0 }}
             >
               <svg
                 width="20"
