@@ -184,7 +184,7 @@ export default function Home() {
                 transition={{ type: 'spring', stiffness: 300 }}
               >
                 <img
-                  src="/Logo_default_light.png"
+                  src="/Logo_default_dark_full.png"
                   alt="Turq Design"
                   className="w-[120px] h-[120px] md:w-[100px] md:h-[100px] object-contain"
                 />
@@ -667,7 +667,7 @@ export default function Home() {
               <div className="col-span-12 md:col-span-4">
                 <div className="flex items-center gap-3 mb-4">
                   <img src="/Logo_default_dark.png" alt="Turq Design Logo" className="w-[120px] h-[120px] md:w-[100px] md:h-[100px] object-contain brightness-0 invert" />
-                  <div className="text-[20px] font-semibold tracking-tight">TURQ DESIGN</div>
+                  {/* <div className="text-[20px] font-semibold tracking-tight">TURQ DESIGN</div> */}
                 </div>
                 <p className="text-[14px] text-white/40 max-w-xs">
                   Design with purpose. Built to last.
