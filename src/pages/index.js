@@ -162,7 +162,9 @@ export default function Home() {
       <Head>
         <title>Turq Design - We Design Brands People Remember</title>
         <meta name="description" content="Turq Design is a creative studio crafting bold brand identities, digital experiences, and visual systems that help businesses stand out and scale." />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+        <link rel="apple-touch-icon" href="/Logo_default_dark_full.png" />
       </Head>
 
       <div className="min-h-screen bg-[#f1f2de] text-[#0a0a0a] overflow-x-hidden" ref={heroRef}>
