@@ -403,12 +403,12 @@ export default function Home() {
         </section>
 
         {/* About Intro Section */}
-        <section className="py-24 md:py-32 lg:py-40">
+        <section className="py-16 md:py-20 lg:py-24">
           <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="grid grid-cols-12 gap-4 md:gap-8">
               <div className="col-span-12 lg:col-span-10 lg:col-start-2">
                 <motion.p
-                  className="text-[24px] md:text-[32px] lg:text-[40px] text-[#0a0a0a]/80 max-w-4xl leading-snug font-light tracking-[-0.01em]"
+                  className="text-[24px] md:text-[31px] lg:text-[31px] text-[#0a0a0a]/80 max-w-4xl leading-snug font-light tracking-[-0.01em]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.3 }}
