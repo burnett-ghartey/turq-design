@@ -592,23 +592,13 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 md:py-32 lg:py-40 bg-white">
+        <section id="contact" className="py-16 md:py-20 lg:py-24 bg-white">
           <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="grid grid-cols-12 gap-4 md:gap-8">
               <div className="col-span-12 text-center">
-                <div className="mb-4">
-                  <h2 className="reveal-text text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]">
-                    Let's build
-                  </h2>
-                </div>
-                <div className="mb-4">
-                  <h2 className="reveal-text text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]">
-                    something
-                  </h2>
-                </div>
                 <div className="mb-12">
-                  <h2 className="reveal-text text-[31px] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.15] tracking-[-0.02em]">
-                    <span className="italic font-bold text-[#20807e]">meaningful</span>
+                  <h2 className="reveal-text text-[25px] md:text-[39px] font-medium leading-[1.15]">
+                    Let's build something <span className="italic font-bold text-[#20807e]">meaningful</span>
                   </h2>
                 </div>
 
@@ -664,19 +654,19 @@ export default function Home() {
             <div className="grid grid-cols-12 gap-8 md:gap-12 items-end">
 
               {/* Logo & Tagline */}
-              <div className="col-span-12 md:col-span-4">
-                <div className="flex items-center gap-3 mb-4">
+              <div className="col-span-12 md:col-span-4 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                   <img src="/Logo_mark_light.png" alt="Turq Design Logo" className="w-[120px] h-[120px] md:w-[120px] md:h-[100px] object-contain" />
                   {/* <div className="text-[20px] font-semibold tracking-tight">TURQ DESIGN</div> */}
                 </div>
-                <p className="text-[14px] text-white/40 max-w-xs">
+                <p className="text-[14px] text-white/40 max-w-xs mx-auto md:mx-0">
                   Design with purpose. Built to last.
                 </p>
               </div>
 
               {/* Social Links */}
               <div className="col-span-12 md:col-span-4">
-                <div className="flex flex-wrap gap-6 md:justify-center">
+                <div className="flex flex-wrap gap-6 justify-center md:justify-center">
                   {['Instagram', 'LinkedIn', 'Dribbble', 'Behance'].map((social) => (
                     <motion.a
                       key={social}
@@ -691,7 +681,7 @@ export default function Home() {
               </div>
 
               {/* Copyright */}
-              <div className="col-span-12 md:col-span-4 md:text-right">
+              <div className="col-span-12 md:col-span-4 text-center md:text-right">
                 <p className="text-[12px] text-white/30 uppercase tracking-wide">
                   © 2024 Turq Design. All rights reserved.
                 </p>
