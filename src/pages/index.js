@@ -191,7 +191,7 @@ export default function Home() {
               </motion.a>
 
               {/* Navigation */}
-              <nav className="hidden md:flex items-center gap-12">
+              <nav className="hidden lg:flex items-center gap-12">
                 {[
                   { href: '#work', label: 'Work' },
                   { href: '#services', label: 'Services' },
@@ -216,9 +216,8 @@ export default function Home() {
               </nav>
 
               {/* Mobile Menu Button */}
-              <motion.button
-                className="md:hidden p-3 text-[#0a0a0a]"
-                whileTap={{ scale: 0.95 }}
+              <button
+                className="lg:!hidden p-3 text-[#0a0a0a]"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -229,7 +228,7 @@ export default function Home() {
                     <path d="M3 6h18M3 12h18M3 18h18" />
                   )}
                 </svg>
-              </motion.button>
+              </button>
             </div>
 
             {/* Mobile Menu Panel */}
@@ -240,7 +239,7 @@ export default function Home() {
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="md:hidden overflow-hidden"
+                  className="lg:hidden overflow-hidden"
                 >
                   <div className="flex flex-col gap-1 pb-6 pt-2">
                     {[
