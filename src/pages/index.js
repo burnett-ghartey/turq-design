@@ -348,14 +348,14 @@ export default function Home() {
 
                   {/* CTAs */}
                   <motion.div
-                    className="flex flex-wrap gap-4 mt-10"
+                    className="flex flex-col md:flex-row flex-wrap gap-4 mt-10"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 1 }}
                   >
                     <motion.a
                       href="#work"
-                      className="inline-flex items-center gap-3 bg-[#23807a] text-white rounded-full font-medium text-[14px] tracking-wider capitalize px-8 py-4 group"
+                      className="inline-flex items-center justify-center gap-3 bg-[#23807a] text-white rounded-full font-medium text-[14px] tracking-wider capitalize w-full md:w-auto px-8 py-4 group"
                       whileHover={{ scale: 1.05, backgroundColor: '#1a6b65' }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -366,7 +366,7 @@ export default function Home() {
                     </motion.a>
                     <motion.a
                       href="#contact"
-                      className="inline-flex items-center gap-3 border-2 border-[#0a0a0a] text-[#0a0a0a] rounded-full font-medium text-[14px] tracking-wider capitalize px-8 py-4 group hover:bg-[#0a0a0a] hover:text-white transition-colors duration-300"
+                      className="inline-flex items-center justify-center gap-3 border-2 border-[#0a0a0a] text-[#0a0a0a] rounded-full font-medium text-[14px] tracking-wider capitalize w-full md:w-auto px-8 py-4 group hover:bg-[#0a0a0a] hover:text-white transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.98 }}
                     >
