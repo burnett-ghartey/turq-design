@@ -375,24 +375,6 @@ export default function Home() {
                   </motion.div>
                 </div>
 
-                {/* Right Column - Scroll CTA */}
-                <motion.div
-                  className="col-span-12 lg:col-span-2 flex flex-col justify-end items-end"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <motion.a
-                    href="#work"
-                    className="magnetic-btn group relative w-14 h-14 md:w-16 md:h-16 bg-[#0a0a0a] rounded-full flex items-center justify-center hover:bg-[#20807e] transition-colors duration-500"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white rotate-90">
-                      <path d="M10 3v14M3 10l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </motion.a>
-                </motion.div>
 
               </div>
 
@@ -685,7 +667,7 @@ export default function Home() {
               {/* Logo & Tagline */}
               <div className="col-span-12 md:col-span-4">
                 <div className="flex items-center gap-3 mb-4">
-                  <img src="/Logo_default_dark.png" alt="Turq Design Logo" className="w-10 h-10 object-contain brightness-0 invert" />
+                  <img src="/Logo_default_dark.png" alt="Turq Design Logo" className="w-[120px] h-[120px] md:w-[100px] md:h-[100px] object-contain brightness-0 invert" />
                   <div className="text-[20px] font-semibold tracking-tight">TURQ DESIGN</div>
                 </div>
                 <p className="text-[14px] text-white/40 max-w-xs">
