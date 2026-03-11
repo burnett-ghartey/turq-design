@@ -666,7 +666,7 @@ export default function Home() {
               {/* Logo & Tagline */}
               <div className="col-span-12 md:col-span-4">
                 <div className="flex items-center gap-3 mb-4">
-                  <img src="/Logo_mark_light.png" alt="Turq Design Logo" className="w-[120px] h-[120px] md:w-[100px] md:h-[100px] object-contain" />
+                  <img src="/Logo_mark_light.png" alt="Turq Design Logo" className="w-[120px] h-[120px] md:w-[120px] md:h-[100px] object-contain" />
                   {/* <div className="text-[20px] font-semibold tracking-tight">TURQ DESIGN</div> */}
                 </div>
                 <p className="text-[14px] text-white/40 max-w-xs">
