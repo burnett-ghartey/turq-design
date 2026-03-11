@@ -135,12 +135,12 @@ button, a.btn {
   display: inline-block;
 }
 
-button:hover, a.btn:hover {
+button:not([aria-label="Toggle menu"]):hover, a.btn:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-button:active, a.btn:active {
+button:not([aria-label="Toggle menu"]):active, a.btn:active {
   transform: translateY(0) scale(0.98);
 }
 

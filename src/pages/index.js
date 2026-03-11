@@ -168,7 +168,7 @@ export default function Home() {
       <div className="min-h-screen bg-[#f1f2de] text-[#0a0a0a] overflow-x-hidden" ref={heroRef}>
         {/* Header */}
         <motion.header
-          className={`fixed top-0 z-50 transition-all duration-300 backdrop-blur-sm border-b border-[#0a0a0a]/5 ${mobileMenuOpen ? 'left-4 right-4 top-4 rounded-2xl bg-[#f1f2de] shadow-lg border' : 'left-0 right-0 bg-[#f1f2de]/90'}`}
+          className={`fixed top-0 z-50 transition-all duration-300 border-b border-[#0a0a0a]/5 ${mobileMenuOpen ? 'left-4 right-4 top-4 rounded-2xl bg-[#f1f2de] border' : 'left-0 right-0 bg-[#f1f2de]'}`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -217,11 +217,11 @@ export default function Home() {
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:!hidden p-3 text-[#0a0a0a]"
+                className="lg:!hidden p-3 text-[#0a0a0a] shadow-none drop-shadow-none"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
-                <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   {mobileMenuOpen ? (
                     <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
                   ) : (
@@ -554,9 +554,9 @@ export default function Home() {
                 <div className="text-[12px] uppercase tracking-[0.3em] text-[#f9d412] font-normal mb-4">
                   About Us
                 </div>
-                <h2 className="text-[36px] md:text-[48px] lg:text-[60px] font-bold leading-[1.1] mb-6">
+                {/* <h2 className="text-[36px] md:text-[48px] lg:text-[60px] font-bold leading-[1.1] mb-6">
                   Turq Design
-                </h2>
+                </h2> */}
                 <p className="text-[18px] text-white/90 leading-relaxed mb-6">
                   Turq Design is a multidisciplinary creative studio specializing in branding, visual identity, and digital design.
                 </p>
@@ -571,7 +571,7 @@ export default function Home() {
                 transition={{ duration: 1, delay: 0.3 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <p className="text-[24px] md:text-[32px] leading-relaxed text-white font-light mb-6">
+                <p className="text-[24px] md:text-[26px] leading-relaxed text-white font-light mb-6">
                   From early-stage startups to established brands, we partner closely with our clients to translate ideas into
                   <span className="font-bold text-[#f9d412]"> compelling visual stories</span> that resonate and endure.
                 </p>
