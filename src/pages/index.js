@@ -312,7 +312,7 @@ export default function Home() {
                         animate={{ y: 0, skewY: 0 }}
                         transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       >
-                        brands <span className="italic font-bold text-[#20807e]">people</span>
+                        brands <span className="italic font-bold text-[#23807a]">people</span>
                       </motion.h1>
                     </div>
 
@@ -355,8 +355,8 @@ export default function Home() {
                   >
                     <motion.a
                       href="#work"
-                      className="inline-flex items-center gap-3 bg-[#0a0a0a] text-white rounded-full font-medium text-[14px] tracking-wider capitalize px-8 py-4 group"
-                      whileHover={{ scale: 1.05, backgroundColor: '#20807e' }}
+                      className="inline-flex items-center gap-3 bg-[#23807a] text-white rounded-full font-medium text-[14px] tracking-wider capitalize px-8 py-4 group"
+                      whileHover={{ scale: 1.05, backgroundColor: '#1a6b65' }}
                       whileTap={{ scale: 0.98 }}
                     >
                       View Our Work
@@ -678,7 +678,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 md:py-16 lg:py-20 bg-[#20807e] text-white">
+        <footer className="py-12 md:py-16 lg:py-20 bg-[#23807a] text-white">
           <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="grid grid-cols-12 gap-8 md:gap-12 items-end">
 
