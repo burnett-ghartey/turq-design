@@ -60,7 +60,7 @@ export default function Home() {
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      smoothTouch: false,
+      smoothTouch: true,
       touchMultiplier: 2,
     });
 
@@ -204,6 +204,7 @@ export default function Home() {
                   <motion.a
                     key={item.href}
                     href={item.href}
+                    onClick={(e) => { e.preventDefault(); window.lenis?.scrollTo(item.href, { duration: 1.2 }); }}
                     className="relative py-3 px-2 text-[12px] font-normal tracking-[0.15em] uppercase text-[#0a0a0a] group"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -255,7 +256,7 @@ export default function Home() {
                         key={item.href}
                         href={item.href}
                         className="text-[32px] font-normal tracking-[0.1em] uppercase text-[#0a0a0a] py-3 px-2 hover:text-[#20807e] transition-colors duration-200"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); window.lenis?.scrollTo(item.href, { duration: 1.2 }); }}
                       >
                         {item.label}
                       </a>
@@ -356,6 +357,7 @@ export default function Home() {
                   >
                     <motion.a
                       href="#work"
+                      onClick={(e) => { e.preventDefault(); window.lenis?.scrollTo('#work', { duration: 1.2 }); }}
                       className="inline-flex items-center justify-center gap-3 bg-[#23807a] text-white rounded-full font-medium text-[14px] tracking-wider capitalize w-full md:w-auto px-8 py-4 group"
                       whileHover={{ scale: 1.05, backgroundColor: '#1a6b65' }}
                       whileTap={{ scale: 0.98 }}
@@ -367,6 +369,7 @@ export default function Home() {
                     </motion.a>
                     <motion.a
                       href="#contact"
+                      onClick={(e) => { e.preventDefault(); window.lenis?.scrollTo('#contact', { duration: 1.2 }); }}
                       className="inline-flex items-center justify-center gap-3 border-2 border-[#0a0a0a] text-[#0a0a0a] rounded-full font-medium text-[14px] tracking-wider capitalize w-full md:w-auto px-8 py-4 group hover:bg-[#0a0a0a] hover:text-white transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.98 }}
@@ -408,7 +411,7 @@ export default function Home() {
             <div className="grid grid-cols-12 gap-4 md:gap-8">
               <div className="col-span-12 lg:col-span-10 lg:col-start-2">
                 <motion.p
-                  className="text-[24px] md:text-[31px] lg:text-[31px] text-[#0a0a0a]/80 max-w-4xl leading-snug font-light tracking-[-0.01em]"
+                  className="text-[25px] md:text-[31px] lg:text-[31px] text-[#0a0a0a]/80 max-w-4xl leading-snug font-light tracking-[-0.01em]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.3 }}
