@@ -15,88 +15,33 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: 'Luxe Botanics',
+    title: 'MK Petals',
     category: 'Brand Identity',
-    industry: 'Beauty & Skincare',
-    description: 'Complete brand identity for a premium skincare line.',
-    overview: 'Luxe Botanics needed a visual identity that conveyed luxury, sustainability, and the science behind their plant-based formulations. We developed a comprehensive brand system from logo to packaging that elevated their presence in a crowded market.',
-    deliverables: ['Logo Design', 'Packaging', 'Brand Guidelines', 'Typography System', 'Print Collateral'],
-    result: 'Brand recognition increased 140% within 6 months of relaunch.',
-    image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200&q=80',
+    industry: 'Plants & Home Decor',
+    description: 'Cohesive brand identity for a modern plant lifestyle brand.',
+    overview: 'MK Petals required a brand identity that communicated sustainability, simplicity, and the joy of bringing nature into everyday spaces. We developed a cohesive visual system that extended across logo design, packaging, and product presentation, creating a memorable unboxing experience while reinforcing the brand\'s eco-conscious values. The result was a refined identity that positioned MK Petals as a modern plant lifestyle brand with strong visual recognition.',
+    deliverables: ['Logo Design', 'Brand Identity System', 'Packaging Design', 'Print Collateral', 'Product Presentation', 'Brand Guidelines', 'Typography System', 'Sustainable Packaging Strategy'],
+    result: 'Customer engagement increased significantly following launch, with stronger brand recall and improved product presentation across retail and online channels. The packaging experience became a key differentiator, helping the brand stand out in a growing indoor plant market.',
+    image: '/images/658931269_17884019784497783_571182024546430971_n.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80',
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
-      'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80'
+      '/images/658931269_17884019784497783_571182024546430971_n.jpg'
     ],
-    year: '2024'
+    year: '2026'
   },
   {
     id: 2,
-    title: 'Horizon Tech',
-    category: 'Digital Design',
-    industry: 'Technology',
-    description: 'Modern website and UI design for an innovative tech startup.',
-    overview: 'Horizon Tech was launching their AI-powered analytics platform and needed a digital presence that felt cutting-edge without alienating non-technical users. We crafted an intuitive website and product UI that balanced sophistication with clarity.',
-    deliverables: ['Web Design', 'UI/UX Design', 'Design System', 'Prototyping', 'Motion Design'],
-    result: 'Conversion rate improved 85% compared to the previous site.',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80',
+    title: 'DAPRE Ventures Ltd.',
+    category: 'Corporate Branding',
+    industry: 'Construction & Engineering',
+    description: 'Professional brand identity for construction and infrastructure development.',
+    overview: 'DAPRE Ventures Ltd. required a professional brand identity that reflected its expertise in construction, infrastructure development, and project execution. We developed a bold visual system centered around strength, precision, and reliability, combining modern typography with industry-focused imagery. The identity was applied across corporate communications and company profile materials, creating a cohesive presence that reinforced credibility with clients, partners, and stakeholders.',
+    deliverables: ['Logo Design', 'Corporate Identity System', 'Company Profile Design', 'Brand Guidelines', 'Typography System', 'Print Design', 'Marketing Materials', 'Corporate Stationery'],
+    result: 'The refreshed brand identity strengthened the company\'s professional image and improved consistency across marketing and business development materials. The new company profile provided a more compelling presentation of services and capabilities, helping position DAPRE Ventures Ltd. as a trusted partner for construction and infrastructure projects.',
+    image: '/images/645967990_17879423943497783_2163389885280786583_n.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80'
+      '/images/645967990_17879423943497783_2163389885280786583_n.jpg'
     ],
-    year: '2024'
-  },
-  {
-    id: 3,
-    title: 'Artisan Coffee',
-    category: 'Visual Identity',
-    industry: 'Food & Beverage',
-    description: 'Warm and inviting brand system for a specialty coffee roaster.',
-    overview: 'Artisan Coffee wanted to stand out from the minimalist trend dominating specialty coffee. We created a rich, textured visual identity that tells the story of their sourcing process and honors the craft behind every roast.',
-    deliverables: ['Visual Identity', 'Packaging Design', 'Menu Design', 'Signage', 'Social Templates'],
-    result: 'Retail sales grew 60% following the brand refresh.',
-    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
-      'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80',
-      'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80'
-    ],
-    year: '2024'
-  },
-  {
-    id: 4,
-    title: 'Verde Studio',
-    category: 'Brand Strategy',
-    industry: 'Architecture',
-    description: 'Strategic rebrand for an architecture firm.',
-    overview: 'Verde Studio had outgrown their original identity after a decade of award-winning work. We led a strategic rebrand that repositioned them as leaders in sustainable architecture, aligning their visual language with their environmental values.',
-    deliverables: ['Brand Strategy', 'Logo Redesign', 'Brand Guidelines', 'Website Design', 'Presentation Templates'],
-    result: 'Secured 3 major institutional clients within the first quarter post-rebrand.',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80',
-      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
-      'https://images.unsplash.com/photo-1448630360428-65456659e233?w=800&q=80'
-    ],
-    year: '2023'
-  },
-  {
-    id: 5,
-    title: 'Nomad Travel',
-    category: 'Digital Platform',
-    industry: 'Travel & Hospitality',
-    description: 'Immersive digital experience for a luxury travel agency.',
-    overview: 'Nomad Travel envisioned a digital platform that felt like the beginning of the journey itself. We designed an immersive, story-driven experience that showcases destinations through rich visuals and seamless booking flows.',
-    deliverables: ['Platform Design', 'UX Strategy', 'Interactive Maps', 'Booking UI', 'Mobile App Design'],
-    result: 'Average session duration increased 3x and bookings up 120%.',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80',
-      'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&q=80'
-    ],
-    year: '2023'
+    year: '2026'
   }
 ];
 
