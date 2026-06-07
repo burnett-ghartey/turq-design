@@ -30,13 +30,13 @@ const projects = [
   },
   {
     id: 2,
-    title: 'DAPRE Ventures Ltd.',
+    title: 'dapore Ventures Ltd.',
     category: 'Corporate Branding',
     industry: 'Construction & Engineering',
     description: 'Professional brand identity for construction and infrastructure development.',
-    overview: 'DAPRE Ventures Ltd. required a professional brand identity that reflected its expertise in construction, infrastructure development, and project execution. We developed a bold visual system centered around strength, precision, and reliability, combining modern typography with industry-focused imagery. The identity was applied across corporate communications and company profile materials, creating a cohesive presence that reinforced credibility with clients, partners, and stakeholders.',
+    overview: 'dapore Ventures Ltd. required a professional brand identity that reflected its expertise in construction, infrastructure development, and project execution. We developed a bold visual system centered around strength, precision, and reliability, combining modern typography with industry-focused imagery. The identity was applied across corporate communications and company profile materials, creating a cohesive presence that reinforced credibility with clients, partners, and stakeholders.',
     deliverables: ['Logo Design', 'Corporate Identity System', 'Company Profile Design', 'Brand Guidelines', 'Typography System', 'Print Design', 'Marketing Materials', 'Corporate Stationery'],
-    result: 'The refreshed brand identity strengthened the company\'s professional image and improved consistency across marketing and business development materials. The new company profile provided a more compelling presentation of services and capabilities, helping position DAPRE Ventures Ltd. as a trusted partner for construction and infrastructure projects.',
+    result: 'The refreshed brand identity strengthened the company\'s professional image and improved consistency across marketing and business development materials. The new company profile provided a more compelling presentation of services and capabilities, helping position dapore Ventures Ltd. as a trusted partner for construction and infrastructure projects.',
     image: '/images/645967990_17879423943497783_2163389885280786583_n.jpg',
     gallery: [
       '/images/645967990_17879423943497783_2163389885280786583_n.jpg'
