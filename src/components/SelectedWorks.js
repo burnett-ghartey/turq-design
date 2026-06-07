@@ -42,6 +42,66 @@ const projects = [
       '/images/645967990_17879423943497783_2163389885280786583_n.jpg'
     ],
     year: '2026'
+  },
+  {
+    id: 3,
+    title: 'Triangle Merchants',
+    category: 'Brand Identity',
+    industry: 'Construction & Trading',
+    description: 'Strong and professional visual identity for construction and trading.',
+    overview: 'Triangle Merchants required a strong and professional visual identity that reflected reliability, safety, and excellence within the construction and trading sector. We developed a distinctive brand system centered around a bold geometric logo, modern typography, and a vibrant color palette that reinforces trust, visibility, and industry leadership. The identity was designed to maintain consistency across safety equipment, corporate materials, signage, and digital platforms while enhancing brand recognition in a competitive marketplace.',
+    deliverables: ['Logo Design', 'Brand Identity System', 'Safety Equipment Branding', 'Typography System', 'Color Palette Development', 'Corporate Stationery', 'Marketing Collateral', 'Brand Guidelines', 'Vehicle & Site Signage', 'Digital Brand Assets'],
+    result: 'Brand visibility increased significantly through consistent implementation across worksite assets and marketing materials, creating a stronger market presence and improved customer trust.',
+    image: '/images/550673187_17859947118497783_4864168182606645507_n.jpg',
+    gallery: [
+      '/images/550673187_17859947118497783_4864168182606645507_n.jpg'
+    ],
+    year: '2024'
+  },
+  {
+    id: 4,
+    title: 'GESENEM Limited',
+    category: 'Brand Identity',
+    industry: 'Corporate / Beauty & Skincare',
+    description: 'Bold and modern visual identity reflecting strength and premium positioning.',
+    overview: 'GESENEM Limited required a bold and modern visual identity that reflected strength, precision, and premium positioning. The goal was to create a distinctive brand system centered around a powerful monogram mark that communicates confidence, professionalism, and long-term credibility. We developed a cohesive identity system including logo design, stationery, and brand applications that ensure consistency across print and digital platforms. The deep red and white color palette reinforces authority and sophistication, while the geometric logo form conveys innovation and forward thinking.',
+    deliverables: ['Logo Design', 'Visual Identity System', 'Brand Guidelines', 'Business Card Design', 'Letterhead Design', 'Print Collateral'],
+    result: 'The refreshed identity strengthened brand presence, improved professional perception, and positioned GESENEM Limited as a premium and reliable company within its sector.',
+    image: '/images/558022504_17861460537497783_1377270077185322879_n.jpg',
+    gallery: [
+      '/images/558022504_17861460537497783_1377270077185322879_n.jpg'
+    ],
+    year: '2024'
+  },
+  {
+    id: 5,
+    title: 'Jeddean Company Ltd.',
+    category: 'Brand Identity',
+    industry: 'Corporate Services / Construction & Engineering',
+    description: 'Professional and cohesive brand identity reflecting reliability and innovation.',
+    overview: 'Jeddean Company Ltd. required a professional and cohesive brand identity that reflected reliability, innovation, and operational excellence. We developed a comprehensive visual identity system centered around the JCL logo, utilizing a strong blue-and-gold color palette to communicate trust, quality, and professionalism. The project included the design of key corporate stationery and marketing materials, ensuring a consistent brand presence across all customer and business touchpoints.',
+    deliverables: ['Logo Design', 'Corporate Identity System', 'Business Card Design', 'Letterhead Design', 'Envelope Design', 'Brand Guidelines', 'Stationery Design', 'Print Collateral'],
+    result: 'The new identity established a stronger corporate image, improved brand consistency across communications, and enhanced the company\'s professional presentation to clients, partners, and stakeholders.',
+    image: '/images/558022504_17861460537497783_1377270077185322879_n.jpg',
+    gallery: [
+      '/images/558022504_17861460537497783_1377270077185322879_n.jpg'
+    ],
+    year: '2024'
+  },
+  {
+    id: 6,
+    title: 'Amets Dreamy Interior',
+    category: 'Brand Identity',
+    industry: 'Interior Design & Home Styling',
+    description: 'Sophisticated visual identity reflecting elegance and premium design services.',
+    overview: 'Amets Dreamy Interior required a sophisticated visual identity that reflected elegance, creativity, and premium interior design services. We developed a refined brand system centered around a custom monogram logo that combines the initials "A" and "D" into a timeless mark. The warm gold and neutral palette was carefully selected to communicate luxury, comfort, and attention to detail, creating a cohesive identity that enhances the brand\'s presence across physical and digital touchpoints.',
+    deliverables: ['Logo Design', 'Brand Identity System', 'Typography System', 'Color Palette Development', 'Business Stationery', 'Signage Design', 'Brand Guidelines', 'Marketing Collateral', 'Social Media Assets', 'Interior Branding Applications'],
+    result: 'The new identity established a strong premium market position, improved brand consistency across customer touchpoints, and increased client engagement through a polished and memorable visual presence.',
+    image: '/images/565136351_17862647670497783_8999445553966104895_n.jpg',
+    gallery: [
+      '/images/565136351_17862647670497783_8999445553966104895_n.jpg'
+    ],
+    year: '2024'
   }
 ];
 
