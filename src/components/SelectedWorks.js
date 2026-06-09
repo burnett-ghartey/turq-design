@@ -24,6 +24,7 @@ const projects = [
     result: 'Customer engagement increased significantly following launch, with stronger brand recall and improved product presentation across retail and online channels. The packaging experience became a key differentiator, helping the brand stand out in a growing indoor plant market.',
     image: '/images/658931269_17884019784497783_571182024546430971_n.jpg',
     gallery: [
+      '/images/658931269_17884019784497783_571182024546430971_n.jpg',
       '/images/658403557_17884019793497783_5454214793678055543_n.jpg'
     ],
     year: '2026'
