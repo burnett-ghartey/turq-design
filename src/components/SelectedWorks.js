@@ -24,7 +24,7 @@ const projects = [
     result: 'Customer engagement increased significantly following launch, with stronger brand recall and improved product presentation across retail and online channels. The packaging experience became a key differentiator, helping the brand stand out in a growing indoor plant market.',
     image: '/images/658931269_17884019784497783_571182024546430971_n.jpg',
     gallery: [
-      '/images/658931269_17884019784497783_571182024546430971_n.jpg'
+      '/images/658403557_17884019793497783_5454214793678055543_n.jpg'
     ],
     year: '2026'
   },
@@ -39,7 +39,8 @@ const projects = [
     result: 'The refreshed brand identity strengthened the company\'s professional image and improved consistency across marketing and business development materials. The new company profile provided a more compelling presentation of services and capabilities, helping position Dapore Ventures Ltd. as a trusted partner for construction and infrastructure projects.',
     image: '/images/645967990_17879423943497783_2163389885280786583_n.jpg',
     gallery: [
-      '/images/645967990_17879423943497783_2163389885280786583_n.jpg'
+      '/images/645967990_17879423943497783_2163389885280786583_n.jpg',
+      '/images/645979861_17879423952497783_8343374281226910139_n.jpg'
     ],
     year: '2026'
   },
@@ -54,7 +55,10 @@ const projects = [
     result: 'Brand visibility increased significantly through consistent implementation across worksite assets and marketing materials, creating a stronger market presence and improved customer trust.',
     image: '/images/550673187_17859947118497783_4864168182606645507_n.jpg',
     gallery: [
-      '/images/550673187_17859947118497783_4864168182606645507_n.jpg'
+      '/images/550673187_17859947118497783_4864168182606645507_n.jpg',
+      '/images/551072529_17859947127497783_6796152675265179231_n.jpg',
+      '/images/551285817_17859947145497783_2063559774082377149_n.jpg',
+      '/images/551833947_17859947136497783_3907121450810623382_n.jpg'
     ],
     year: '2024'
   },
@@ -69,7 +73,8 @@ const projects = [
     result: 'The refreshed identity strengthened brand presence, improved professional perception, and positioned GESENEM Limited as a premium and reliable company within its sector.',
     image: '/images/558022504_17861460537497783_1377270077185322879_n.jpg',
     gallery: [
-      '/images/558022504_17861460537497783_1377270077185322879_n.jpg'
+      '/images/558022504_17861460537497783_1377270077185322879_n.jpg',
+      '/images/558032629_17861460546497783_9028915842972317320_n .jpg'
     ],
     year: '2024'
   },
@@ -99,14 +104,16 @@ const projects = [
     result: 'The new identity established a strong premium market position, improved brand consistency across customer touchpoints, and increased client engagement through a polished and memorable visual presence.',
     image: '/images/565136351_17862647670497783_8999445553966104895_n.jpg',
     gallery: [
-      '/images/565136351_17862647670497783_8999445553966104895_n.jpg'
+      '/images/565136351_17862647670497783_8999445553966104895_n.jpg',
+      '/images/565561763_17862647682497783_2052828712690319846_n.jpg',
+      '/images/565803681_17862647691497783_4452622439291317280_n.jpg'
     ],
     year: '2024'
   }
 ];
 
 function getImages(project) {
-  const all = [project.image, ...(project.gallery || [])];
+  const all = project.gallery || [];
   return all.map((src) => ({ src, alt: project.title }));
 }
 
