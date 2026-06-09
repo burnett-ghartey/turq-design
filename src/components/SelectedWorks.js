@@ -90,7 +90,7 @@ const projects = [
     result: 'The new identity established a stronger corporate image, improved brand consistency across communications, and enhanced the company\'s professional presentation to clients, partners, and stakeholders.',
     image: '/images/558022504_17861460537497783_1377270077185322879_n.jpg',
     gallery: [
-      '/images/558022504_17861460537497783_1377270077185322879_n.jpg'
+      '/images/631807155_17876340702497783_266545415030643004_n.jpg'
     ],
     year: '2024'
   },
