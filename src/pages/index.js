@@ -613,7 +613,7 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   <motion.a
-                    href="mailto:hello@turqdesign.com"
+                    href="mailto:turqlimited@gmail.com"
                     className="magnetic-btn inline-flex items-center justify-center gap-4 bg-[#20807e] text-white rounded-full font-[500] text-[14px] md:text-[14px] capitalize tracking-wider md:tracking-widest w-full md:w-auto px-10 md:px-14 py-5 md:py-6 group"
                     whileHover={{ scale: 1.05, backgroundColor: '#1a6b69' }}
                     whileTap={{ scale: 0.98 }}
