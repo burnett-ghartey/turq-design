@@ -67,7 +67,7 @@ const projects = [
     id: 4,
     title: 'GESENEM Limited',
     category: 'Brand Identity',
-    industry: 'Corporate / Beauty & Skincare',
+    industry: 'Construction and Supplies',
     description: 'Bold and modern visual identity reflecting strength and premium positioning.',
     overview: 'GESENEM Limited required a bold and modern visual identity that reflected strength, precision, and premium positioning. The goal was to create a distinctive brand system centered around a powerful monogram mark that communicates confidence, professionalism, and long-term credibility. We developed a cohesive identity system including logo design, stationery, and brand applications that ensure consistency across print and digital platforms. The deep red and white color palette reinforces authority and sophistication, while the geometric logo form conveys innovation and forward thinking.',
     deliverables: ['Logo Design', 'Visual Identity System', 'Brand Guidelines', 'Business Card Design', 'Letterhead Design', 'Print Collateral'],
