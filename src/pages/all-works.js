@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useRouter } from "next/navigation";
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
@@ -110,6 +111,63 @@ const projects = [
       '/images/565803681_17862647691497783_4452622439291317280_n.jpg'
     ],
     year: '2024'
+  },
+    {
+    id: 7,
+    title: 'Ike\'s Cafe & Grill',
+    category: 'Brand Identity',
+    industry: 'Food & Beverage / Hospitality',
+    description: 'Refined brand identity for a modern West African café and grill rooted in culture and bold flavor.',
+    overview: 'Ike\'s Cafe & Grill required a refined brand identity that captured its approach to authentic West African cuisine through a modern and elevated dining experience. We developed a cohesive visual system that balances cultural character with contemporary sophistication, creating a distinctive identity that reflects warmth, hospitality, and bold flavor. The brand was designed to translate seamlessly across the restaurant environment, menus, packaging, signage, and digital touchpoints while establishing a memorable presence within the modern dining space.',
+    deliverables: ['Logo Design', 'Brand Identity System', 'Typography System', 'Color Palette Development', 'Menu Design', 'Packaging Design', 'Signage Design', 'Restaurant Branding', 'Marketing Collateral', 'Digital Brand Assets'],
+    result: 'The new identity established a sophisticated and memorable brand presence, strengthening the restaurant\'s visual positioning and creating a consistent experience across its dining environment, customer materials, and digital touchpoints.',
+    image: '/images/ike-6788110.webp',
+    gallery: [
+      '/images/ike-6788110.webp',
+      '/images/ike-00099932.webp',
+      '/images/ike-1343323.webp',
+      '/images/ike-22877472.webp',
+      '/images/ike-887666742.webp'
+    ],
+    year: '2026'
+  },
+
+  {
+    id: 8,
+    title: 'Mist & Breeze',
+    category: 'Brand Identity',
+    industry: 'Outdoor Cooling & Hospitality',
+    description: 'Modern brand identity for a premium outdoor cooling and comfort solutions brand.',
+    overview: 'Mist & Breeze required a modern and distinctive brand identity that communicated comfort, innovation, and premium outdoor experiences. We developed a cohesive visual system centered around fluid wave elements and a contemporary aesthetic inspired by air, mist, and movement. The identity was designed to work across cooling equipment, branded installations, event spaces, and promotional materials, creating a recognizable presence that positions Mist & Breeze as a modern solution for enhancing comfort in outdoor environments.',
+    deliverables: ['Logo Design', 'Brand Identity System', 'Typography System', 'Color Palette Development', 'Product Branding', 'Equipment Branding', 'Outdoor Installation Branding', 'Signage Design', 'Marketing Collateral', 'Digital Brand Assets'],
+    result: 'The new identity created a distinctive and contemporary brand presence, improving visual consistency across equipment and outdoor installations while reinforcing Mist & Breeze as a modern and premium outdoor comfort solution.',
+    image: '/images/mist-118873642.webp',
+    gallery: [
+      '/images/mist-00998382.webp',
+      '/images/mist-8837244.webp',
+      '/images/mist-99822444.webp',
+      '/images/mist-118873642.webp'
+    ],
+    year: '2026'
+  },
+
+  {
+    id: 9,
+    title: 'Quame Owusu',
+    category: 'Brand Identity',
+    industry: 'Luxury Fashion',
+    description: 'Distinctive luxury fashion identity rooted in bespoke craftsmanship, culture, and timeless elegance.',
+    overview: 'Quame Owusu required a sophisticated brand identity that reflected its position as a Ghanaian luxury fashion house dedicated to bespoke craftsmanship, cultural expression, and timeless elegance. We developed a refined visual system that brings together contemporary luxury with elements inspired by Ghanaian identity and heritage. The resulting brand direction creates a distinctive and elevated presence across fashion pieces, packaging, communications, and digital platforms while reinforcing the house\'s commitment to craftsmanship and cultural expression.',
+    deliverables: ['Logo Design', 'Luxury Brand Identity System', 'Typography System', 'Color Palette Development', 'Packaging Design', 'Fashion Branding', 'Print Collateral', 'Brand Guidelines', 'Social Media Assets', 'Digital Brand Assets'],
+    result: 'The new identity established a refined and distinctive luxury presence, strengthening brand recognition while creating a cohesive visual language that reflects Ghanaian culture, bespoke craftsmanship, and timeless elegance.',
+    image: '/images/quame-4777294.webp',
+    gallery: [
+      '/images/quame-0993194.webp',
+      '/images/quame-4777294.webp',
+      '/images/quame-77369466.webp',
+      '/images/quame-77483742.webp'
+    ],
+    year: '2026'
   }
 ];
 
@@ -191,10 +249,12 @@ function ProjectPreview({ project, onClose }) {
                 )}
                 <button
                   onClick={onClose}
-                  className="cursor-pointer rounded-full bg-[#0a0a0a]/5 p-2 text-[#0a0a0a] transition-colors hover:bg-[#0a0a0a]/10"
+                  className="custom-works-button cursor-pointer rounded-full bg-[#0a0a0a]/5 p-2 text-[#0a0a0a] transition-colors hover:bg-[#0a0a0a]/10"
                 >
                   <HiXMark size={20} />
                 </button>
+
+                
               </div>
             </div>
 
@@ -473,7 +533,8 @@ function ProjectItem({ project, index, onSelect }) {
   );
 }
 
-export default function SelectedWorks() {
+export default function AllWorks() {
+    const router = useRouter()
   const [selectedProject, setSelectedProject] = useState(null);
   const headerLeftRef = useRef(null);
   const headerRightRef = useRef(null);
@@ -547,20 +608,28 @@ export default function SelectedWorks() {
   }, []);
 
   return (
-    <section id="work" className="py-24 md:py-32 lg:py-40 bg-[#f1f2de]">
+    <section id="work" className="py-24 md:py-32 lg:py-15 bg-[#f1f2de]">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
-
+        {/* back button */}
+            <div className="mb-10">
+                <button
+                  onClick={() => router.back()}
+                  className="cursor-pointer rounded-full bg-[#0a0a0a]/5 p-2 text-[#0a0a0a] transition-colors hover:bg-[#0a0a0a]/10"
+                >
+                  <HiChevronLeft size={20} />
+                </button>
+            </div>
         {/* Section Header - Minimal */}
         <div className="mb-16 md:mb-24 grid grid-cols-12 gap-4">
           <div
             ref={headerLeftRef}
             className="col-span-12 md:col-span-6 opacity-0"
           >
-            <span className="text-[12px] font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
+            {/* <span className="text-[12px] font-normal tracking-[0.3em] uppercase text-[#20807e] mb-6 block">
               Selected Work
-            </span>
+            </span> */}
             <h2 className="text-[25px] md:text-[39px] font-medium leading-[1.15]">
-              Featured<br />
+              All<br />
               <span className="text-[#0a0a0a]/20">Projects</span>
             </h2>
           </div>
@@ -570,20 +639,20 @@ export default function SelectedWorks() {
             className="col-span-12 md:col-span-4 md:col-start-9 flex items-end opacity-0"
           >
             <p className="text-[14px] text-[#0a0a0a]/50 leading-relaxed">
-              Selected projects showcasing our approach to branding, digital design, and visual storytelling.
+              All projects showcasing our approach to branding, digital design, and visual storytelling.
             </p>
           </div>
         </div>
 
         {/* Projects List */}
         <div className="border-t border-[#0a0a0a]/10">
-          {projects.slice(0, 4).map((project, index) => (
+          {projects.map((project, index) => (
             <ProjectItem key={project.id} project={project} index={index} onSelect={setSelectedProject} />
           ))}
         </div>
 
         {/* View All */}
-        <div
+        {/* <div
           ref={viewAllRef}
           className="mt-16 md:mt-24 opacity-0"
         >
@@ -597,7 +666,7 @@ export default function SelectedWorks() {
             </span>
             <span className="w-12 h-px bg-[#0a0a0a]/20 group-hover:w-20 group-hover:bg-[#20807e] transition-all duration-300"></span>
           </a>
-        </div>
+        </div> */}
 
       </div>
 
