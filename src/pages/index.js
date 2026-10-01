@@ -186,10 +186,11 @@ export default function Home() {
                 transition={{ type: 'spring', stiffness: 300 }}
               >
                 <img
-                  src="/Logo_default_light.png"
+                  src={mobileMenuOpen ? "/Logo_default_dark_full.png" : "/Logo_default_light.png"}
                   alt="Turq Design"
                   className="w-[120px] h-[120px] md:w-[100px] md:h-[100px] object-contain"
                 />
+
               </motion.a>
 
               {/* Navigation */}
@@ -224,7 +225,7 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fbd712" strokeWidth="2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={mobileMenuOpen ? "#20807f" : "#fbd712"}strokeWidth="2">
                   {mobileMenuOpen ? (
                     <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
                   ) : (
@@ -364,7 +365,7 @@ export default function Home() {
                     >
                       View Our Work
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-1 transition-transform">
-                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </motion.a>
                     <motion.a
@@ -572,7 +573,7 @@ export default function Home() {
                 {/* Testimonial */}
                 <div className="mt-12 p-6 bg-white/10 rounded-2xl">
                   <svg className="w-8 h-8 text-[#f9d412] mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                   <p className="text-[16px] text-white/90 italic leading-relaxed mb-4">
                     "Turq Design delivered a brand identity that perfectly captured our vision. The process was smooth, collaborative, and highly professional."
