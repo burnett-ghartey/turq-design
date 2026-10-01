@@ -127,7 +127,17 @@ const projects = [
       '/images/ike-00099932.webp',
       '/images/ike-1343323.webp',
       '/images/ike-22877472.webp',
-      '/images/ike-887666742.webp'
+      '/images/ike-887666742.webp',
+      '/images/ike-0987432222.webp',
+      '/images/ike-89900008382.webp',
+      '/images/ike-0888888342.webp',
+      '/images/ike-10203453.webp',
+      '/images/ike-334452103.webp',
+      '/images/ike-339988888.webp',
+      '/images/ike-228883231.webp',
+      '/images/ike-44485828282.webp',
+      '/images/ike-22223345.webp'
+
     ],
     year: '2026'
   },
@@ -146,7 +156,8 @@ const projects = [
       '/images/mist-00998382.webp',
       '/images/mist-8837244.webp',
       '/images/mist-99822444.webp',
-      '/images/mist-118873642.webp'
+      '/images/mist-118873642.webp',
+      '/images/mist-66766784.webp'
     ],
     year: '2026'
   },
