@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import ScrollToTop from "../components/ScrollToTop";
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import SelectedWorks from '../components/SelectedWorks';
@@ -684,6 +685,7 @@ export default function Home() {
             </div>
           </div>
         </footer>
+        <ScrollToTop />
       </div>
     </>
   );
