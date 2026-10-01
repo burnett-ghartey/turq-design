@@ -170,7 +170,7 @@ export default function Home() {
       <div className="min-h-screen bg-[#f1f2de] text-[#0a0a0a] overflow-x-hidden" ref={heroRef}>
         {/* Header */}
         <motion.header
-          className={`fixed top-0 z-50 transition-all duration-300 border-b border-[#0a0a0a]/5 ${mobileMenuOpen ? 'left-4 right-4 top-4 rounded-2xl bg-[#f1f2de] border' : 'left-0 right-0 bg-[#f9d411]'}`}
+          className={`fixed top-0 z-50 transition-all duration-300 border-b border-[#0a0a0a]/5 ${mobileMenuOpen ? 'left-4 right-4 top-4 rounded-2xl bg-[#f1f2de] border' : 'left-0 right-0 bg-[#20807f]'}`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -186,7 +186,7 @@ export default function Home() {
                 transition={{ type: 'spring', stiffness: 300 }}
               >
                 <img
-                  src="/Logo_default_dark_full.png"
+                  src="/Logo_default_light.png"
                   alt="Turq Design"
                   className="w-[120px] h-[120px] md:w-[100px] md:h-[100px] object-contain"
                 />
