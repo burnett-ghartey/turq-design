@@ -146,7 +146,7 @@ const projects = [
     id: 8,
     title: 'Mist & Breeze',
     category: 'Brand Identity',
-    industry: 'Cooling fans',
+    industry: 'Outdoor Cooling Fans & Hospitality',
     description: 'Modern brand identity for a premium outdoor cooling and comfort solutions brand.',
     overview: 'Mist & Breeze required a modern and distinctive brand identity that communicated comfort, innovation, and premium outdoor experiences. We developed a cohesive visual system centered around fluid wave elements and a contemporary aesthetic inspired by air, mist, and movement. The identity was designed to work across cooling equipment, branded installations, event spaces, and promotional materials, creating a recognizable presence that positions Mist & Breeze as a modern solution for enhancing comfort in outdoor environments.',
     deliverables: ['Logo Design', 'Brand Identity System', 'Typography System', 'Color Palette Development', 'Product Branding', 'Equipment Branding', 'Outdoor Installation Branding', 'Signage Design', 'Marketing Collateral', 'Digital Brand Assets'],
